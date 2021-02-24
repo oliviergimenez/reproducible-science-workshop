@@ -1,0 +1,37 @@
+name: "reproducible-science-workshop"
+title: "Reproducible science workshop"
+description: |
+output_dir: "docs"
+#theme: "theme.css"
+#repository_url: https://github.com/wilkelab/SDS375
+include: [".nojekyll"]
+navbar:
+  source_url: true
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+  right:
+    - text: "Slides"
+      menu:
+        - text: "Lecture 1: Motivation"
+          href: slides/0_motivation.html
+        - text: "Lecture 2: Versioning"
+          href: slides/1_github.html
+        - text: "Lecture 3: Dynamic doc"
+          href: slides/2_markdown.html
+        - text: "Lecture 4: Manip"
+          href: slides/3_dplyr.html
+        - text: "Lecture 5: Dataviz"
+          href: slides/4_ggplot.html
+        - text: "Lecture 6: Spatial"
+          href: slides/5_spatial.html
+    - text: "Worksheets"
+      menu:
+        - text: "Practical 1: Dynamic doc"
+          href: practicals/1_rmarkdown.html
+        - text: "Practical 1: Solution"
+          href: practicals/1_rmarkdownsolution.html
+output: distill::distill_article
+
