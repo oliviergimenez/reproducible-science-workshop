@@ -1,0 +1,31 @@
+---
+title: "Workshop on reproducible science"
+author: "Olivier Gimenez"
+date: "last updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, "slides-theme.css"]
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      slideNumberFormat: ''
+      titleSlideClass: [center, middle]
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(comment = "")
+```
+
+## Reproducible science?
+
+
+---
+
+## Further reading
+
+- [R Markdown tutorial](https://rmarkdown.rstudio.com/lesson-2.html)
+- [R Markdown cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [R Markdown book](https://bookdown.org/yihui/rmarkdown/)

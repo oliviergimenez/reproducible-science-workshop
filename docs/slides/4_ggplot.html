@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to the Tidyverse</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Olivier Gimenez" />
+    <script src="assets/libs/header-attrs-2.7/header-attrs.js"></script>
+    <link rel="stylesheet" href="assets/css/rutgers-tidyverse.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/rutgers-fonts_og.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to the Tidyverse
+## Data visualisation
+### Olivier Gimenez
+### last updated: 2021-02-25
+
+---
+
+
+
+
+
+# Visualization with ggplot2
+
+* The package ggplot2 implements a **g**rammar of **g**raphics
+
+* Operates on data.frames or tibbles, not vectors like base R
+
+* Explicitly differentiates between the data and its representation
+
+&lt;img src="assets/img/ggplot2_logo.jpg" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# The ggplot2 grammar
+
+
+ Grammar element   | What it is
+ :---------------- | :-----------------------------
+ **Data**          | The data frame being plotted
+ **Geometrics**    | The geometric shape that will represent the data
+                   | (e.g., point, boxplot, histogram)
+ **Aesthetics**    | The aesthetics of the geometric object
+                   | (e.g., color, size, shape)
+
+
+&lt;img src="assets/img/ggplot2_logo.jpg" width="30%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Scatterplots
+
+
+```r
+*citations %&gt;%
+* ggplot() +
+  aes(x = nbtweets, y = woscitations) +
+  geom_point()
+```
+* Pass in the data frame as your first argument
+
+---
+
+# Scatterplots
+
+
+```r
+citations %&gt;%
+  ggplot() +
+* aes(x = nbtweets, y = woscitations) +
+  geom_point()
+```
+* Pass in the data frame as your first argument
+* Aesthetics maps the data onto plot characteristics, here x and y axes
+
+---
+
+# Scatterplots
+
+
+```r
+citations %&gt;%
+  ggplot() +
+  aes(x = nbtweets, y = woscitations) +
+* geom_point()
+```
+* Pass in the data frame as your first argument
+* Aesthetics maps the data onto plot characteristics, here x and y axes
+* Display the data geometrically as points
+
+
+---
+
+# Scatterplots
+
+
+```r
+citations %&gt;%
+  ggplot() +
+  aes(x = nbtweets, y = woscitations) +
+  geom_point()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-6-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Scatterplots, with colors
+
+
+```r
+citations %&gt;%
+  ggplot() +
+  aes(x = nbtweets, y = woscitations) +
+* geom_point(color = "red")
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-7-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Scatterplots, with species-specific colors
+
+
+```r
+citations %&gt;%
+  ggplot() +
+* aes(x = nbtweets, y = woscitations, color = journal) +
+  geom_point()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-8-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+
+* Placing color inside aesthetic maps it to the data
+
+
+---
+
+# Pick a few journals
+
+
+```r
+citations_ecology &lt;- citations %&gt;%
+  mutate(journal = str_to_lower(journal)) %&gt;% # all journals names lowercase
+  filter(journal %in%
+           c('journal of animal ecology','journal of applied ecology','ecology')) # filter
+citations_ecology
+```
+
+```
+## # A tibble: 216 x 12
+##    journal impactfactor pubyear Volume Issue Authors   colldate pubdate nbtweets
+##    &lt;chr&gt;          &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt;
+##  1 ecology         6.16    2014     95 12    Magliane… 3/19/20… 12/1/2…        1
+##  2 ecology         6.16    2014     95 12    Soinen    3/19/20… 12/1/2…        6
+##  3 ecology         6.16    2014     95 12    Graham a… 3/19/20… 12/1/2…        1
+##  4 ecology         6.16    2014     95 11    White et… 3/19/20… 11/1/2…        9
+##  5 ecology         6.16    2014     95 11    Einarson… 3/19/20… 11/1/2…       15
+##  6 ecology         6.16    2014     95 11    Haav and… 3/19/20… 11/1/2…        2
+##  7 ecology         6.16    2014     95 10    Dodds et… 3/19/20… 10/1/2…        1
+##  8 ecology         6.16    2014     95 10    Brown et… 3/19/20… 10/1/2…        1
+##  9 ecology         6.16    2014     95 10    Wright e… 3/19/20… 10/1/2…        0
+## 10 ecology         6.16    2014     95 9     Ramahlo … 3/19/20… 9/1/20…       27
+## # … with 206 more rows, and 3 more variables: Number of users &lt;dbl&gt;,
+## #   Twitter reach &lt;dbl&gt;, woscitations &lt;dbl&gt;
+```
+
+
+---
+
+# Scatterplots, with species-specific shapes
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+* aes(x = nbtweets, y = woscitations, shape = journal) +
+  geom_point(size=2)
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-10-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Scatterplots, lines instead of points
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets, y = woscitations) +
+* geom_line() +
+  scale_x_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-11-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Scatterplots, lines with sorting beforehand
+
+
+```r
+citations_ecology %&gt;%
+* arrange(woscitations) %&gt;%
+  ggplot() +
+  aes(x = nbtweets, y = woscitations) +
+  geom_line() +
+  scale_x_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-12-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Scatterplots, add points
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets, y = woscitations) +
+  geom_line() +
+* geom_point() +
+  scale_x_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-13-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Scatterplots, add linear trend
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets, y = woscitations) +
+  geom_point() +
+* geom_smooth(method = "lm") +
+  scale_x_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-14-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Scatterplots, add smoother
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets, y = woscitations) +
+  geom_point() +
+* geom_smooth() +
+  scale_x_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-15-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# aes or not aes?
+
+* If we are to establish a link between the values of a variable and a graphical feature, ie a mapping, then we need an aes().
+
+* Otherwise, the graphical feature is modified irrespective of the data, then we do not need an aes().
+
+&lt;img src="assets/img/ggplot2_logo.jpg" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Histograms
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets) +
+* geom_histogram()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-17-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Histograms, with colors
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets) +
+* geom_histogram(fill = "orange")
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-18-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Histograms, with colors
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets) +
+* geom_histogram(fill = "orange", color = "brown")
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-19-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Histograms, with labels and title
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets) +
+  geom_histogram(fill = "orange", color = "brown") +
+* labs(x = "Number of tweets",
+*      y = "Count",
+*      title = "Histogram of the number of tweets")
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-20-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Histograms, by species
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets) +
+  geom_histogram(fill = "orange", color = "brown") +
+  labs(x = "Number of tweets",
+       y = "Count",
+       title = "Histogram of the number of tweets") + 
+* facet_wrap(vars(journal))
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-21-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Boxplots
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = "", y = nbtweets) +
+* geom_boxplot() +
+  scale_y_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-22-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Boxplots with colors
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = "", y = nbtweets) +
+* geom_boxplot(fill = "green") +
+  scale_y_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-23-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Boxplots with colors by species
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+* aes(x = journal, y = nbtweets, fill = journal) +
+  geom_boxplot() +
+  scale_y_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-24-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Get rid of the ticks on x axis
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = journal, y = nbtweets, fill = journal) +
+  geom_boxplot() +
+  scale_y_log10() + 
+* theme(axis.text.x = element_blank()) +
+* labs(x = "")
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-25-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Boxplots, user-specified colors by species
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = journal, y = nbtweets, fill = journal) +
+  geom_boxplot() +
+  scale_y_log10() +
+* scale_fill_manual(
+*   values = c("red", "blue", "purple")) +
+  theme(axis.text.x = element_blank()) +
+  labs(x = "")
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-26-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Boxplots, change legend settings
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = journal, y = nbtweets, fill = journal) +
+  geom_boxplot() +
+  scale_y_log10() +
+* scale_fill_manual(
+    values = c("red", "blue", "purple"),
+*   name = "Journal name",
+*   labels = c("Ecology", "J Animal Ecology", "J Applied Ecology")) +
+  theme(axis.text.x = element_blank()) +
+  labs(x = "")
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-27-1.png" width="270cm" height="270cm" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Ugly bar plots
+
+
+```r
+citations %&gt;%
+  count(journal) %&gt;%
+  ggplot() +
+  aes(x = journal, y = n) +
+* geom_col()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-28-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Idem, with flipping
+
+
+```r
+citations %&gt;%
+  count(journal) %&gt;%
+  ggplot() +
+* aes(x = n, y = journal) +
+  geom_col()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-29-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Idem, with factors reordering and flipping
+
+
+```r
+citations %&gt;%
+  count(journal) %&gt;%
+  ggplot() +
+* aes(x = n, y = fct_reorder(journal, n)) +
+  geom_col()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-30-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Further cleaning
+
+
+```r
+citations %&gt;%
+  count(journal) %&gt;%
+  ggplot() +
+  aes(x = n, y = fct_reorder(journal, n)) +
+  geom_col() + 
+  labs(x = "counts", y = "")
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-31-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# More about how to (tidy) work with factors 
+
+* [Be the boss of your factors](https://stat545.com/block029_factors.html) and 
+* [forcats, forcats, vous avez dit forcats ?](https://thinkr.fr/forcats-forcats-vous-avez-dit-forcats/).
+
+
+---
+
+# Density plots
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets, fill = journal) +
+* geom_density() +
+  scale_x_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-32-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Density plots, control transparency
+
+
+```r
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets, fill = journal) +
+* geom_density(alpha = 0.5) +
+  scale_x_log10()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-33-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Change default background 
+
+
+```r
+# `B &amp; W theme`
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets, fill = journal) +
+  geom_density(alpha = 0.5) +
+  scale_x_log10() +
+* theme_bw()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-34-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Change default background theme 
+
+
+```r
+# `classic theme`
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets, fill = journal) +
+  geom_density(alpha = 0.5) +
+  scale_x_log10() +
+* theme_classic()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-35-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Change default background theme 
+
+
+```r
+# `dark theme`
+citations_ecology %&gt;%
+  ggplot() +
+  aes(x = nbtweets, fill = journal) +
+  geom_density(alpha = 0.5) +
+  scale_x_log10() +
+* theme_dark()
+```
+
+&lt;img src="assets/chunks/unnamed-chunk-36-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# More on data visualisation with ggplot2
+
+
+* [Portfolio](https://www.r-graph-gallery.com/portfolio/ggplot2-package/) of ggplot2 plots
+
+* [Cédric Scherer's portfolio](https://cedricscherer.netlify.app/top/dataviz/) of data visualisations
+
+* [Top](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) ggplot2 visualizations
+
+* [Interactive](https://dreamrs.github.io/esquisse/) ggplot2 visualizations
+
+
+&lt;img src="assets/img/ggplot2_logo.jpg" width="30%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+background-image: url(https://github.com/rstudio/hex-stickers/raw/master/SVG/tidyverse.svg?sanitize=true)
+background-size: 550px
+background-position: 50% 50%
+
+
+---
+
+# To dive deeper in data visualisation with the tidyverse
+
+* [Learn the tidyverse](https://www.tidyverse.org/learn/): books, workshops and online courses
+
+
+* My selection of books:
+   - [R for Data Science](https://r4ds.had.co.nz/) et [Advanced R](http://adv-r.had.co.nz/)
+   - [Introduction à R et au tidyverse](https://juba.github.io/tidyverse/)
+   - [Fundamentals of Data visualization](https://clauswilke.com/dataviz/)
+   - [Data Visualization: A practical introduction](http://socviz.co/)
+
+
+* [Tidy Tuesdays videos](https://www.youtube.com/user/safe4democracy/videos) by D. Robinson 
+
+* Material of the [2-day workshop Data Science in the tidyverse](https://github.com/cwickham/data-science-in-tidyverse) held at the RStudio 2019 conference
+
+* Material of the stat545 course on [Data wrangling, exploration, and analysis with R](https://stat545.com/) at the University of British Columbia
+
+---
+
+# The [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+
+&lt;img src="assets/img/ggplot1.png" width="600px" style="display: block; margin: auto;" /&gt;
+
+---
+
+# The [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+
+&lt;img src="assets/img/ggplot2.png" width="600px" style="display: block; margin: auto;" /&gt;
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

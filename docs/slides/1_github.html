@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to Git and GitHub with RStudio</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Olivier Gimenez" />
+    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.13.0/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.13.0/css/v4-shims.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/footer.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/metropolis-ak_dc.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: middle, left, title-slide
+
+# Introduction to Git and GitHub with RStudio
+### Olivier Gimenez
+### last updated: 2021-02-24
+
+---
+
+layout: true
+
+&lt;!-- &lt;div class="my-footer"&gt;&lt;span&gt; HAIR meeting     --&gt;
+&lt;!-- &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; --&gt;
+&lt;!-- &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; --&gt;
+&lt;!--                     @oaggimenez &lt;a href="https://twitter.com/oaggimenez"&gt;`&lt;i class="fab fa-twitter" role="presentation" aria-label="twitter icon"&gt;&lt;/i&gt;`{=html} &lt;/a&gt; --&gt;
+&lt;!--                     oliviergimenez &lt;a href="https://github.com/oliviergimenez"&gt;`&lt;i class="fab fa-github-alt" role="presentation" aria-label="github-alt icon"&gt;&lt;/i&gt;`{=html} &lt;/a&gt; --&gt;
+&lt;!--                     &lt;/span&gt;&lt;/div&gt; --&gt;
+
+
+
+---
+
+# Rings a bell? 
+
+&lt;center&gt;
+
+&lt;img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" height="500px"&gt;
+ 
+&lt;/center&gt;
+ 
+---
+
+# Is your workflow...
+
+&lt;center&gt;
+
+&lt;img src="assets/definitions.jpg" width="700px" /&gt;
+
+&lt;/center&gt;
+
+
+
+---
+
+# Why reproducible science?
+
+&lt;center&gt;
+
+&lt;img src="assets/natureCapture.png" width="700px" /&gt;
+
+&lt;/center&gt;
+
+
+---
+
+# Why reproducible science?
+
+&lt;center&gt;
+
+&lt;img src="assets/leMonde_science.png" width="700px" /&gt;
+
+&lt;/center&gt;
+
+
+
+---
+
+# Version Control
+
+### What is it? 🤔
+
+The **management of changes** to documents, computer programs, large web sites, and other collections of information.
+
+### Git &lt;img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" height="25px" &gt;
+
+Open source (free to use) **Version control software.**
+
+### GitHub &lt;img src="https://raw.githubusercontent.com/annakrystalli/rrresearch/master/docs/assets/github_logo.jpg" height="25px"&gt;
+
+A **website** (https://github.com/) that allows you to **store your Git repositories online** and makes it easy to collaborate with others.
+
+---
+
+# Git, Github &amp; RStudio
+
+#### Before: git only through the terminal 😢
+
+--
+
+***
+
+## Now: RStudio + `usethis` 📦 == ❤️ `Git` &amp; `GitHub` 🤩
+
+.center[
+![](https://media.giphy.com/media/GA2FNpP1kAQNi/giphy.gif)
+]
+
+
+---
+# Configure git &amp; GitHub
+
+### Configure git
+
+**Check your configuration**
+
+
+
+
+**Set your configuration**
+
+Use your github username and and the email you used to sign-up on GitHub
+
+
+
+---
+# Configure GitHub authentication
+
+### Get GITHUB Personal Authorisation Token
+
+
+
+
+&lt;img src="assets/browse_github.png" height="300px"&gt;
+
+---
+
+### Store in `.Renviron` file
+
+
+
+&lt;img src="assets/GITHUB_PAT.png" height="400px"&gt;
+
+
+---
+# Initialise git
+
+
+### Initialise **RStudio project** with Git by **just checking a box!**
+
+It's now **a repository**
+
+&lt;img src="assets/project_git.png" height="200px"&gt;
+
+
+
+---
+
+# RStudio Projects
+
+## Use RStudio projects to keep materials associated with a particular analysis together
+
+&lt;br&gt;
+ 
+.pull-left[
+- **Self contained** and **portable**
+- **Working directory set to root** of project on launch
+- **Fresh session** everytime the project is launched
+
+See Jenny Bryan's post on [**project oriented workflows**](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) for more details
+]
+
+.pull-right.center[
+
+**File &gt; New Project &gt; New Directory**
+
+&lt;img src="assets/new_project.png" height=200px&gt;
+]
+
+
+
+
+---
+# Git panel
+
+## Integrated graphical user interface
+
+&lt;br&gt;
+
+.center[
+&lt;img src="assets/git_tab.png" height="300px"&gt;
+]
+
+
+---
+# Git terms
+
+* **repository** your project folder
+&lt;br&gt;
+* **commit** a snapshot of your repo
+&lt;br&gt;
+* **push** send commits to a remote
+&lt;br&gt;
+* **pull** get commits from a remote
+
+&lt;br&gt;
+
+* (*clone* get the repository from the remote for the first time)
+* (*branch* a movable label that points to a commit)
+* (*merge* combining two branches)
+* (*remote* a computer with the repository on it)
+
+---
+# Git RStudio workflow
+
+.pull-left[
+#### view file status
+&lt;img src="assets/git_view.png" height="150px"&gt;
+
+#### stage files
+&lt;img src="assets/git_add.png" height="150px"&gt;
+]
+
+.pull-right[
+#### commit changes
+&lt;img src="assets/git_commit.png" width="600px"&gt;
+]
+---
+
+# Share on GitHub
+
+#### Create repo
+
+
+
+
+&lt;img src="assets/my_awesome_repo.png" width="750px"&gt;
+
+#### Push further changes
+
+&lt;img src="assets/push_github.png" height="50px"&gt;
+
+
+---
+
+# Anatomy of a GitHub repo
+
+- **`README`**. Explain what your project is, and how to use it. 
+  + `usethis::use_readme_md()`
+  + `usethis::use_readme_rmd()`
+
+- **`LICENSE`**. Without a licence, the contents of the repository are technically closed. 
+  + Examples licence [MIT](https://tldrlegal.com/license/mit-license): `usethis::use_mit_license(name = "Olivier Gimenez")`
+  + `?licenses`: details of functions available to generate licenses
+  + [https://choosealicense.com/](https://choosealicense.com/) help on choosing a licence.
+
+    
+- **`CONTRIBUTING.md`** - guidelines for contributors.
+  + `usethis::use_tidy_contributing()` provides a realtively strict but instructive template
+
+- **`CODE_OF_CONDUCT.md`** set the tone for discourse between contributors. 
+  + `use_code_of_conduct()`
+
+---
+# GitHub issues
+
+### use GitHub issues to plan, record and discuss tasks.
+
+&lt;img src="assets/github_issues.png" width="800px"&gt;
+
+---
+
+# Why using a remote like GitHub ?
+
+* A backup of your repository
+
+* Work with others (not covered)
+
+* Increase your visibility 
+
+* Increase interactions with users
+
+* Easy distribution of packages (without CRAN submissions)
+
+
+---
+# Resources
+
+&lt;br&gt;
+
+#### I used many slides from [Anna Krystalli](https://annakrystalli.me/)
+
+&lt;br&gt;
+
+#### Also, see our [FRB-Cesab and GDR EcoStat Workshop on reproducible research in ecology](https://frbcesab.github.io/datatoolbox/index.html#1)
+
+&lt;br&gt;
+
+#### Check out [Happy Git and GitHub for the useR](https://happygitwithr.com/) for more
+
+&lt;br&gt;
+
+#### The British Ecological Society has [A Guide to Reproducible Code in Ecology and Evolution](https://colauttilab.github.io/Readings/BES-Reproducible-Code.pdf)
+
+---
+
+# Virtuous research cycle
+
+&lt;center&gt;
+
+&lt;img src="assets/researchcycle.jpg" width="700px" /&gt;
+
+&lt;/center&gt;
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
