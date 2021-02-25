@@ -1,6 +1,6 @@
 # Reproducible science with R and RStudio
 
-This repository holds the source materials used at https://wilkelab.org/SDS375
+This repository holds the source materials used at https://oliviergimenez.github.io/reproducible-science-workshop/
  
 ## Reuse
 
