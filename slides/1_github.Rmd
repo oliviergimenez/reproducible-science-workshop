@@ -1,0 +1,325 @@
+---
+title: "Introduction to Git and GitHub with RStudio"
+author: "Olivier Gimenez"
+date: "last updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, assets/css/footer.css, metropolis-fonts, assets/css/metropolis-ak_dc.css]
+    lib_dir: libs
+    nature:
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      highlightStyle: github
+      titleSlideClass: [middle, left]
+      highlightLines: true
+      countIncrementalSlides: false
+---
+layout: true
+
+<!-- <div class="my-footer"><span> HAIR meeting     -->
+<!-- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; -->
+<!-- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; -->
+<!--                     @oaggimenez <a href="https://twitter.com/oaggimenez">`r shiny::icon("twitter")` </a> -->
+<!--                     oliviergimenez <a href="https://github.com/oliviergimenez">`r shiny::icon("github-alt")` </a> -->
+<!--                     </span></div> -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(magrittr)
+```
+
+---
+
+# Rings a bell? 
+
+<center>
+
+<img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" height="500px">
+ 
+</center>
+ 
+---
+
+# Is your workflow...
+
+<center>
+
+<img src="assets/definitions.jpg" width="700px" />
+
+</center>
+
+
+
+---
+
+# Why reproducible science?
+
+<center>
+
+<img src="assets/natureCapture.png" width="700px" />
+
+</center>
+
+
+---
+
+# Why reproducible science?
+
+<center>
+
+<img src="assets/leMonde_science.png" width="700px" />
+
+</center>
+
+
+
+---
+
+# Version Control
+
+### What is it? `r emo::ji("thinking")`
+
+The **management of changes** to documents, computer programs, large web sites, and other collections of information.
+
+### Git <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" height="25px" >
+
+Open source (free to use) **Version control software.**
+
+### GitHub <img src="https://raw.githubusercontent.com/annakrystalli/rrresearch/master/docs/assets/github_logo.jpg" height="25px">
+
+A **website** (https://github.com/) that allows you to **store your Git repositories online** and makes it easy to collaborate with others.
+
+---
+
+# Git, Github & RStudio
+
+#### Before: git only through the terminal `r emo::ji("cry")`
+
+--
+
+***
+
+## Now: RStudio + `usethis` `r emo::ji("package")` == `r emo::ji("heart")` `Git` & `GitHub` `r emo::ji("star_struck")`
+
+.center[
+![](https://media.giphy.com/media/GA2FNpP1kAQNi/giphy.gif)
+]
+
+
+---
+# Configure git & GitHub
+
+### Configure git
+
+**Check your configuration**
+
+```{r, eval=FALSE}
+usethis::git_sitrep()
+```
+
+
+**Set your configuration**
+
+Use your github username and and the email you used to sign-up on GitHub
+
+```{r, eval=FALSE}
+usethis::use_git_config(
+    user.name = "Jane",
+    user.email = "jane@example.org")
+```
+
+---
+# Configure GitHub authentication
+
+### Get GITHUB Personal Authorisation Token
+
+```{r, eval=F}
+usethis::browse_github_pat()
+```
+
+
+<img src="assets/browse_github.png" height="300px">
+
+---
+
+### Store in `.Renviron` file
+
+```{r, eval=F}
+usethis::edit_r_environ()
+```
+
+<img src="assets/GITHUB_PAT.png" height="400px">
+
+
+---
+# Initialise git
+
+
+### Initialise **RStudio project** with Git by **just checking a box!**
+
+It's now **a repository**
+
+<img src="assets/project_git.png" height="200px">
+
+
+
+---
+
+# RStudio Projects
+
+## Use RStudio projects to keep materials associated with a particular analysis together
+
+<br>
+ 
+.pull-left[
+- **Self contained** and **portable**
+- **Working directory set to root** of project on launch
+- **Fresh session** everytime the project is launched
+
+See Jenny Bryan's post on [**project oriented workflows**](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) for more details
+]
+
+.pull-right.center[
+
+**File > New Project > New Directory**
+
+<img src="assets/new_project.png" height=200px>
+]
+
+
+
+
+---
+# Git panel
+
+## Integrated graphical user interface
+
+<br>
+
+.center[
+<img src="assets/git_tab.png" height="300px">
+]
+
+
+---
+# Git terms
+
+* **repository** your project folder
+<br>
+* **commit** a snapshot of your repo
+<br>
+* **push** send commits to a remote
+<br>
+* **pull** get commits from a remote
+
+<br>
+
+* (*clone* get the repository from the remote for the first time)
+* (*branch* a movable label that points to a commit)
+* (*merge* combining two branches)
+* (*remote* a computer with the repository on it)
+
+---
+# Git RStudio workflow
+
+.pull-left[
+#### view file status
+<img src="assets/git_view.png" height="150px">
+
+#### stage files
+<img src="assets/git_add.png" height="150px">
+]
+
+.pull-right[
+#### commit changes
+<img src="assets/git_commit.png" width="600px">
+]
+---
+
+# Share on GitHub
+
+#### Create repo
+
+
+```{r, eval=FALSE}
+usethis::use_github(protocol = "https")
+```
+
+<img src="assets/my_awesome_repo.png" width="750px">
+
+#### Push further changes
+
+<img src="assets/push_github.png" height="50px">
+
+
+---
+
+# Anatomy of a GitHub repo
+
+- **`README`**. Explain what your project is, and how to use it. 
+  + `usethis::use_readme_md()`
+  + `usethis::use_readme_rmd()`
+
+- **`LICENSE`**. Without a licence, the contents of the repository are technically closed. 
+  + Examples licence [MIT](https://tldrlegal.com/license/mit-license): `usethis::use_mit_license(name = "Olivier Gimenez")`
+  + `?licenses`: details of functions available to generate licenses
+  + [https://choosealicense.com/](https://choosealicense.com/) help on choosing a licence.
+
+    
+- **`CONTRIBUTING.md`** - guidelines for contributors.
+  + `usethis::use_tidy_contributing()` provides a realtively strict but instructive template
+
+- **`CODE_OF_CONDUCT.md`** set the tone for discourse between contributors. 
+  + `use_code_of_conduct()`
+
+---
+# GitHub issues
+
+### use GitHub issues to plan, record and discuss tasks.
+
+<img src="assets/github_issues.png" width="800px">
+
+---
+
+# Why using a remote like GitHub ?
+
+* A backup of your repository
+
+* Work with others (not covered)
+
+* Increase your visibility 
+
+* Increase interactions with users
+
+* Easy distribution of packages (without CRAN submissions)
+
+
+---
+# Resources
+
+<br>
+
+#### I used many slides from [Anna Krystalli](https://annakrystalli.me/)
+
+<br>
+
+#### Also, see our [FRB-Cesab and GDR EcoStat Workshop on reproducible research in ecology](https://frbcesab.github.io/datatoolbox/index.html#1)
+
+<br>
+
+#### Check out [Happy Git and GitHub for the useR](https://happygitwithr.com/) for more
+
+<br>
+
+#### The British Ecological Society has [A Guide to Reproducible Code in Ecology and Evolution](https://colauttilab.github.io/Readings/BES-Reproducible-Code.pdf)
+
+---
+
+# Virtuous research cycle
+
+<center>
+
+<img src="assets/researchcycle.jpg" width="700px" />
+
+</center>
+
+

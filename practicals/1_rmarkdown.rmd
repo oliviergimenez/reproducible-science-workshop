@@ -1,0 +1,80 @@
+---
+title: Writing a report with R Markdown
+subtitle: Practical
+output:
+  xaringan::moon_reader:
+    css: ["assets/css/xaringan-themer.css", "assets/css/custom.css"]
+    lib_dir: "assets/libs"
+    seal: true
+    yolo: false
+    self_contained: false
+    nature:
+      ratio: "4:3"
+      titleSlideClass: ["right", "middle"]
+      highlightStyle: 'zenburn'
+      highlightLines: false
+      countIncrementalSlides: false
+      slideNumberFormat: "%current% / %total%"
+      beforeInit: "../../assets/libs/macros.js"
+---
+
+## Context
+
+Let's apply what we have learnt in the course on [Writing dynamic and reproducible documents - An introduction to R Markdown](https://oliviergimenez.github.io/intro_rmarkdown/#1). 
+
+We will use the awesome `palmerpenguins` dataset `r emo::ji("penguin")`, an alternative to Fisher's `iris` dataset, to explore and visualize data.
+
+These data have been collected and shared by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and [Palmer Station, Antarctica LTER](https://pal.lternet.edu/). 
+
+The package was built by Drs Allison Horst and Alison Hill, check out the [official website](https://allisonhorst.github.io/palmerpenguins/). 
+
+The package `palmerpenguins` has two datasets. 
+
+```{r showdata}
+library(palmerpenguins)
+data(package = 'palmerpenguins')
+``` 
+
+---
+
+The dataset `penguins` is a simplified version of the raw data; see `?penguins` for more info: 
+
+```{r example-penguins}
+head(penguins)
+```
+
+---
+
+The other dataset `penguins_raw` has the raw data; see `?penguins_raw` for more info: 
+
+```{r example-penguins-raw}
+head(penguins_raw)
+```
+
+
+For this exercise, we're gonna use the `penguins` dataset. 
+
+
+---
+
+## Questions
+
+**1)** Install the package `palmerpenguins`.
+
+**2)** Create a new R Markdown document, name it and save it. Delete everything after line 12. Add a new section title, simple text and text in bold font. Compile ("Knit").  
+
+**3)** Add a chunk in which you load the `palmerpenguins`. The corresponding line of code should be hidden in the output. Load also the `tidyverse` suite of packages. Modify the defaults to suppress all messages. 
+
+**4)** Add another chunk in which you build a table with the 10 first rows of the dataset.
+
+**5)** In a new section, display how many individuals, penguins species and islands we have in the dataset. This info should appear directly in the text, you might want to use inline code `r emo::ji("smile")`. Calculate the mean of the (numeric) traits measured on the penguins.
+
+---
+
+**6)** In another section, entitled 'Graphical exploration', build a figure with 3 superimposed histograms, each one corresponding to the body mass of a species.  
+
+**7)** Instal package `citr`; if everything goes well, you should see it in the pulldown menu `Addins` `r emo::ji("muscle")`. Pick a recent publication from the researcher who shared the data, Dr Kristen Gorman. Import this publication in your favorite references manager (we use Zotero, no hard feeling), and create a bibtex reference that you will add to to the file `mabiblio.bib`. Add `bibliography: mabiblio.bib` at the beginning of your R Markdown document (YAML). Cite the reference iin the text using `Insert citations` in the pull-down menu `Addins`. Compile. 
+
+**8)** Change the default citation format (Chicago style) into the The American Naturalist format. It can be found here  <https://www.zotero.org/styles>. To do soo, add `csl: the-american-naturalist.csl` in the YAML.
+
+**9)** Build your report in html, pdf and docx format. `r emo::ji("tada")`

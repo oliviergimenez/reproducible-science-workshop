@@ -1,0 +1,66 @@
+---
+title: "Workshop on reproducible science"
+author: "Olivier Gimenez"
+date: "last updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, "slides-theme.css"]
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      slideNumberFormat: ''
+      titleSlideClass: [center, middle]
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(comment = "")
+```
+
+---
+class: inverse, center, middle
+# Motivation
+
+---
+<iframe width="1300" height="600" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Credit: [Ignasi Bartomeus, PhD](https://bartomeuslab.com/)
+
+---
+# 
+
+.center[![](assets/img/phd031214s.png)]
+
+---
+# How can you reproduce results?
+
+.center[![](assets/img/ctrlcctrlv.png)]
+
+
+---
+# What do we need to make research reproducible?
+
+- Something to integrate text, figures and code 
+     * `R`, `Python`, etc
+
+
+- Something that can be continuously edited and updated 
+     * Living or dynamic document
+
+
+- Something that can be easily used in versioning tools
+     * Git
+
+
+
+
+
+---
+
+## Further reading
+
+- [R Markdown tutorial](https://rmarkdown.rstudio.com/lesson-2.html)
+- [R Markdown cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [R Markdown book](https://bookdown.org/yihui/rmarkdown/)

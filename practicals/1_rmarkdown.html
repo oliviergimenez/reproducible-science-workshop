@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Writing a report with R Markdown</title>
+    <meta charset="utf-8" />
+    <script src="assets/libs/header-attrs-2.6/header-attrs.js"></script>
+    <link rel="stylesheet" href="assets/css/xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: right, middle, title-slide
+
+# Writing a report with R Markdown
+## Practical
+
+---
+
+
+## Context
+
+Let's apply what we have learnt in the course on [Writing dynamic and reproducible documents - An introduction to R Markdown](https://oliviergimenez.github.io/intro_rmarkdown/#1). 
+
+We will use the awesome `palmerpenguins` dataset 🐧, an alternative to Fisher's `iris` dataset, to explore and visualize data.
+
+These data have been collected and shared by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and [Palmer Station, Antarctica LTER](https://pal.lternet.edu/). 
+
+The package was built by Drs Allison Horst and Alison Hill, check out the [official website](https://allisonhorst.github.io/palmerpenguins/). 
+
+The package `palmerpenguins` has two datasets. 
+
+
+```r
+library(palmerpenguins)
+data(package = 'palmerpenguins')
+```
+
+---
+
+The dataset `penguins` is a simplified version of the raw data; see `?penguins` for more info: 
+
+
+```r
+head(penguins)
+```
+
+```
+## # A tibble: 6 x 8
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Adelie  Torge…           39.1          18.7              181        3750 male 
+## 2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+## 3 Adelie  Torge…           40.3          18                195        3250 fema…
+## 4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+## 5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+## 6 Adelie  Torge…           39.3          20.6              190        3650 male 
+## # … with 1 more variable: year &lt;int&gt;
+```
+
+---
+
+The other dataset `penguins_raw` has the raw data; see `?penguins_raw` for more info: 
+
+
+```r
+head(penguins_raw)
+```
+
+```
+## # A tibble: 6 x 17
+##   studyName `Sample Number` Species Region Island Stage `Individual ID`
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;          
+## 1 PAL0708                 1 Adelie… Anvers Torge… Adul… N1A1           
+## 2 PAL0708                 2 Adelie… Anvers Torge… Adul… N1A2           
+## 3 PAL0708                 3 Adelie… Anvers Torge… Adul… N2A1           
+## 4 PAL0708                 4 Adelie… Anvers Torge… Adul… N2A2           
+## 5 PAL0708                 5 Adelie… Anvers Torge… Adul… N3A1           
+## 6 PAL0708                 6 Adelie… Anvers Torge… Adul… N3A2           
+## # … with 10 more variables: `Clutch Completion` &lt;chr&gt;, `Date Egg` &lt;date&gt;,
+## #   `Culmen Length (mm)` &lt;dbl&gt;, `Culmen Depth (mm)` &lt;dbl&gt;, `Flipper Length
+## #   (mm)` &lt;dbl&gt;, `Body Mass (g)` &lt;dbl&gt;, Sex &lt;chr&gt;, `Delta 15 N (o/oo)` &lt;dbl&gt;,
+## #   `Delta 13 C (o/oo)` &lt;dbl&gt;, Comments &lt;chr&gt;
+```
+
+
+For this exercise, we're gonna use the `penguins` dataset. 
+
+
+---
+
+## Questions
+
+**1)** Install the package `palmerpenguins`.
+
+**2)** Create a new R Markdown document, name it and save it. Delete everything after line 12. Add a new section title, simple text and text in bold font. Compile ("Knit").  
+
+**3)** Add a chunk in which you load the `palmerpenguins`. The corresponding line of code should be hidden in the output. Load also the `tidyverse` suite of packages. Modify the defaults to suppress all messages. 
+
+**4)** Add another chunk in which you build a table with the 10 first rows of the dataset.
+
+**5)** In a new section, display how many individuals, penguins species and islands we have in the dataset. This info should appear directly in the text, you might want to use inline code 😄. Calculate the mean of the (numeric) traits measured on the penguins.
+
+---
+
+**6)** In another section, entitled 'Graphical exploration', build a figure with 3 superimposed histograms, each one corresponding to the body mass of a species.  
+
+**7)** Instal package `citr`; if everything goes well, you should see it in the pulldown menu `Addins` 💪. Pick a recent publication from the researcher who shared the data, Dr Kristen Gorman. Import this publication in your favorite references manager (we use Zotero, no hard feeling), and create a bibtex reference that you will add to to the file `mabiblio.bib`. Add `bibliography: mabiblio.bib` at the beginning of your R Markdown document (YAML). Cite the reference iin the text using `Insert citations` in the pull-down menu `Addins`. Compile. 
+
+**8)** Change the default citation format (Chicago style) into the The American Naturalist format. It can be found here  &lt;https://www.zotero.org/styles&gt;. To do soo, add `csl: the-american-naturalist.csl` in the YAML.
+
+**9)** Build your report in html, pdf and docx format. 🎉
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../../assets/libs/macros.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "4:3",
+"highlightStyle": "zenburn",
+"highlightLines": false,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current% / %total%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
