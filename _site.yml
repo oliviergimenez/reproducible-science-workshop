@@ -22,7 +22,7 @@ navbar:
           href: slides/3_dplyr.html
         - text: "Part 2: Visualising data"
           href: slides/4_ggplot.html
-        - text: "Part 3: Writing reproducible document"
+        - text: "Part 3: Writing reproducible documents"
           href: slides/2_markdown.html
         - text: "Part 4: Versioning"
           href: slides/1_github.html

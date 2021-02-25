@@ -6,20 +6,20 @@
       "description": "A one-day workshop with `R` and `RStudio`",
       "author": [],
       "contents": "\nWho: Olivier Gimenez\nWhen: March 18, 2021\nWhere: Zoom\nTimeline\nManipulating and visualising data in the tidyverse\nWriting dynamic and reproducible documents with R Markdown\nVersioning with Git and GitHub in RStudio\nRequirements\nYou will need a GitHub account, you can easily set up a free account here.\nTo run the workshop materials on your machine, you will need:\nThe latest version of R, download here.\nThe latest version of RStudio, download here.\nThe following R packages: tidyverse, sf, emo, janitor and lubridate. You can install them all at once by running the following code in the R command line:\n\n\n\ninstall.packages(c(\"tidyverse\", \"sf\", \"emo\", \"janitor\", \"lubridate\"))\n\n\n\nCorrections\nIf you see mistakes or want to suggest changes, please create an issue on the source repository.\nReuse\nText and figures are licensed under Creative Commons Attribution CC BY 4.0. Any computer code (R, HTML, CSS, etc.) in slides and worksheets, including in slide and worksheet sources, is also licensed under MIT.\n\n\n\n",
-      "last_modified": "2021-02-25T18:37:09+01:00"
+      "last_modified": "2021-02-25T18:45:55+01:00"
     },
     {
       "path": "LICENSE.html",
       "author": [],
       "contents": "\nMIT License\nCopyright (c) 2021 Olivier Gimenez\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n\n",
-      "last_modified": "2021-02-25T18:37:09+01:00"
+      "last_modified": "2021-02-25T18:45:56+01:00"
     },
     {
       "path": "todolist.html",
       "title": "To do list",
       "author": [],
       "contents": "\nTo-do list\najouter des quiz dans Zoom tirés des learnr tidyquintro\nAjouter credits dans index ou ailleurs\nFaut-il installer Git?\nquick intro à rstudio aussi\nConfig rstudio et github (le faire sur compte Eleni)\nAjouter les heures à la timeline\nWrite a general introduction to reproducible science; inspiration from this excellent blog post and slides\nAdd practical sessions (like in the R Markdown session; pizza recipe example for GitHub)\nAdd something on how to work with Word using redoc\nAdd something on how to collaborate on Rmd documents\nCheck out this excellent resource\nIntroduce the concept of research compendium [paper] [rrtools package]\nImprove the GitHub course with this, this and that\n\n\n\n",
-      "last_modified": "2021-02-25T18:37:09+01:00"
+      "last_modified": "2021-02-25T18:45:56+01:00"
     }
   ],
   "collections": []
