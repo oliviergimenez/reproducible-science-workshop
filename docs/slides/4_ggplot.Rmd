@@ -533,6 +533,8 @@ citations_ecology %>%
 
 * [Interactive](https://dreamrs.github.io/esquisse/) ggplot2 visualizations
 
+* [Manipulate and visualise spatial data](https://oliviergimenez.github.io/intro_spatialR/#1) with the sf package
+
 
 ```{r echo=FALSE, out.width = "30%", fig.align="center"}
 knitr::include_graphics("assets/img/ggplot2_logo.jpg")
