@@ -20,55 +20,8 @@ theme_set(theme_grey(base_size = 16))
 library(emo)
 ```
 
-# Credits
-
-- Garrett Grolemund [RStudio webinar](https://github.com/garrettgman/webinars/tree/master/12-Getting-started-with-R-Markdown)
-
-![](assets/img/garrett.jpg) 
-
-- Ulrik Lyngs [workshop material](https://github.com/ulyngs/rmarkdown-workshop-2019) 
-
-![](assets/img/ulrik2.jpg)
-
-
----
-class: inverse, center, middle
-# Motivation
-
----
-<iframe width="1300" height="600" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Credit: [Ignasi Bartomeus, PhD](https://bartomeuslab.com/)
-
----
-# 
-
-.center[![](assets/img/phd031214s.png)]
-
----
-# How can you reproduce results?
-
-.center[![](assets/img/ctrlcctrlv.png)]
-
-
----
-# What do we need to make research reproducible?
-
-- Something to integrate text, figures and code 
-     * `R`, `Python`, etc
-
-
-- Something that can be continuously edited and updated 
-     * Living or dynamic document
-
-
-- Something that can be easily used in versioning tools
-     * Git
-
----
 
 .center[![](assets/img/trio.jpg)]
-
 
 
 ---
@@ -556,11 +509,7 @@ R Markdown gallery <https://rmarkdown.rstudio.com/gallery.html>
 
 - Deploy via GitHub pages or Netlify
 
-
----
-class: inverse, center, middle
-# Live demo
-## Build your own website in a few minutes
+- See a video tutorial [here](https://www.youtube.com/watch?v=4OUEss2XF7E&t=4s)
 
 
 ---
@@ -580,22 +529,3 @@ class: inverse, center, middle
 ![](assets/img/books.png)
 
 
-
----
-class: title-slide-final, middle
-background-size: 55px
-background-position: 9% 15%
-
-# Thanks!
-
-### I created these slides with [xaringan](https://github.com/yihui/xaringan) and [R Markdown](https://rmarkdown.rstudio.com/) using the [rutgers css](https://github.com/jvcasillas/ru_xaringan) that I slightly modified.
-
-### Credit: I borrowed slides from [Garrett Grolemund](https://rstudio.com/speakers/garrett-grolemund/) and [Ulrik Lyngs](https://ulriklyngs.com/). I also used the beautiful illustrations shared by [Allison Horst](https://github.com/allisonhorst/stats-illustrations).
-
-
-|                                                                                                            |                                   |
-| :--------------------------------------------------------------------------------------------------------- | :-------------------------------- |
-| `r icon::fa("envelope")` | **olivier.gimenez@cefe.cnrs.fr**       |
-| `r icon::fa("home")` | [**https://oliviergimenez.github.io/**](https://oliviergimenez.github.io/) |
-| `r icon::fa_twitter()` | [**@oaggimenez**](https://twitter.com/oaggimenez)                         |
-| `r icon::fa_github()` | [**@oliviergimenez**](https://github.com/oliviergimenez)

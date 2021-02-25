@@ -19,7 +19,42 @@ options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(comment = "")
 ```
 
-## Reproducible science?
+---
+class: inverse, center, middle
+# Motivation
+
+---
+<iframe width="1300" height="600" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Credit: [Ignasi Bartomeus, PhD](https://bartomeuslab.com/)
+
+---
+# 
+
+.center[![](assets/img/phd031214s.png)]
+
+---
+# How can you reproduce results?
+
+.center[![](assets/img/ctrlcctrlv.png)]
+
+
+---
+# What do we need to make research reproducible?
+
+- Something to integrate text, figures and code 
+     * `R`, `Python`, etc
+
+
+- Something that can be continuously edited and updated 
+     * Living or dynamic document
+
+
+- Something that can be easily used in versioning tools
+     * Git
+
+
+
 
 
 ---
