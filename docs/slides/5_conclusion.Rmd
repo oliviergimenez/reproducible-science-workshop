@@ -19,7 +19,26 @@ options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(comment = "")
 ```
 
-## Reproducible science?
+---
+
+# Virtuous research cycle
+
+<center>
+
+<img src="assets/researchcycle.jpg" width="700px" />
+
+</center>
+
+
+---
+
+# Take-home message
+
+--- 
+
+# Not covered
+
+Drake, targets, docker, rrtools
 
 
 ---

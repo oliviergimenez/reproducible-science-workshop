@@ -15,13 +15,6 @@ output:
 ---
 layout: true
 
-<!-- <div class="my-footer"><span> HAIR meeting     -->
-<!-- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; -->
-<!-- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; -->
-<!--                     @oaggimenez <a href="https://twitter.com/oaggimenez">`r shiny::icon("twitter")` </a> -->
-<!--                     oliviergimenez <a href="https://github.com/oliviergimenez">`r shiny::icon("github-alt")` </a> -->
-<!--                     </span></div> -->
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(magrittr)
@@ -37,39 +30,6 @@ library(magrittr)
  
 </center>
  
----
-
-# Is your workflow...
-
-<center>
-
-<img src="assets/definitions.jpg" width="700px" />
-
-</center>
-
-
-
----
-
-# Why reproducible science?
-
-<center>
-
-<img src="assets/natureCapture.png" width="700px" />
-
-</center>
-
-
----
-
-# Why reproducible science?
-
-<center>
-
-<img src="assets/leMonde_science.png" width="700px" />
-
-</center>
-
 
 
 ---
@@ -311,15 +271,4 @@ usethis::use_github(protocol = "https")
 <br>
 
 #### The British Ecological Society has [A Guide to Reproducible Code in Ecology and Evolution](https://colauttilab.github.io/Readings/BES-Reproducible-Code.pdf)
-
----
-
-# Virtuous research cycle
-
-<center>
-
-<img src="assets/researchcycle.jpg" width="700px" />
-
-</center>
-
 
