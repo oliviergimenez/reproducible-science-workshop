@@ -24,9 +24,12 @@ Where: Zoom
 
 # Timeline
 
-* Manipulating and visualising data in the `tidyverse` 
+* Motivations
+* Manipulating data in the `tidyverse` 
+* Visualising data in the `tidyverse` 
 * Writing dynamic and reproducible documents with `R Markdown` 
 * Versioning with `Git` and `GitHub` in `RStudio` 
+* Take-home messages
 
 # Requirements
 

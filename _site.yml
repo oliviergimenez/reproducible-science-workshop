@@ -16,7 +16,7 @@ navbar:
       href: index.html
     - text: "Slides"
       menu:
-        - text: "Introduction"
+        - text: "Motivations"
           href: slides/0_introduction.html
         - text: "Part 1: Manipulating data"
           href: slides/3_dplyr.html
@@ -26,7 +26,7 @@ navbar:
           href: slides/2_markdown.html
         - text: "Part 4: Versioning"
           href: slides/1_github.html
-        - text: "Conclusion"
+        - text: "Take-home messages"
           href: slides/5_conclusion.html
     - text: "Worksheets"
       menu:
