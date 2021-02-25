@@ -1,6 +1,6 @@
 ---
 title: "Reproducible science workshop"
-description: null
+description: "A one-day workshop with `R` and `RStudio`"
 site: distill::distill_website
 ---
 
@@ -15,60 +15,38 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-This is the home page for a workshop on reproducible science with R and RStudio. 
 
 Who: [Olivier Gimenez](https://oliviergimenez.github.io/)  
-Where: online  
+When: March 18, 2021  
+Where: Zoom  
 <!-- Syllabus: [click here](syllabus.html)   -->
 <!-- Upcoming lectures and assignments: [click here](schedule.html)   -->
 
-## Computing requirements
+# Timeline
 
-To run any of the materials locally on your own machine, you will need the following:
+* Manipulating and visualising data in the `tidyverse` 
+* Writing dynamic and reproducible documents with `R Markdown` 
+* Versioning with `Git` and `GitHub` in `RStudio` 
 
-- The latest version of R, [download from here.](https://cloud.r-project.org/)
-- The latest version of RStudio, [download from here.](https://rstudio.com/products/rstudio/download/#download)
-- The following R packages:    
-XXX
+# Requirements
 
-You can install all required R packages at once by running the following code in the R command line:
+* You will need a GitHub account, you can easily set up a free account [here](https://github.com/).
+
+* To run the workshop materials on your machine, you will need:
+
+    - The latest version of `R`, [download here](https://cloud.r-project.org/).
+    - The latest version of `RStudio`, [download here](https://rstudio.com/products/rstudio/download/#download).
+    - The following `R` packages: `tidyverse`, `sf`, `emo`, `janitor` and `lubridate.` You can install them all at once by running the following code in the `R` command line:
 
 ```{r eval = FALSE, echo = TRUE}
-install.packages(
-  c(
-    "broom", "cluster"
-  )
-)
+install.packages(c("tidyverse", "sf", "emo", "janitor", "lubridate"))
 ```
 
-# Reproducible science with R and RStudio
 
-Here you will find the material I use to teach reproducible science with `R` and `RStudio`.
+## Corrections {.appendix}
 
-* Introduction to `Git` and `GitHub` with `RStudio` [[slides](https://oliviergimenez.github.io/quick-intro-git-github-rstudio/#1)] [[material](https://github.com/oliviergimenez/quick-intro-git-github-rstudio)]
-
-* Writing dynamic and reproducible documents with `R Markdown` [[slides](https://oliviergimenez.github.io/intro_rmarkdown/#1)] [[material](https://github.com/oliviergimenez/intro_rmarkdown)] [[practical](https://github.com/oliviergimenez/intro_rmarkdown_practical)] [[interactive dashboard](https://github.com/oliviergimenez/bias_occupancy)] [[website](https://www.youtube.com/watch?v=4OUEss2XF7E&t=1s)]
-
-* Manipulate and visualise data in the `tidyverse` [[slides](https://oliviergimenez.github.io/intro_tidyverse/#1)] [[material](https://github.com/oliviergimenez/intro_tidyverse)] [[tips](https://oliviergimenez.github.io/tidyverse-tips/)]
-
-* Focus on GIS and spatial data with `sf` package [[slides](https://oliviergimenez.github.io/intro_spatialR/#1)] [[material](https://github.com/oliviergimenez/intro_spatialR)]
-
-## To-do list
-
-* Write a general introduction to reproducible science; inspiration from this excellent [blog post](https://lgatto.github.io/open-and-rr-2/) and [slides](https://lgatto.github.io/2020_12_04_RSG_online/#1)
-
-* Add practical sessions (like in the R Markdown session; pizza recipe example for GitHub)
-
-* Add something on how to work with Word using [`redoc`](https://bookdown.org/yihui/rmarkdown-cookbook/word-redoc.html)
-
-* Add something on [how to collaborate on Rmd documents](https://bookdown.org/yihui/rmarkdown-cookbook/google-drive.html)
-
-* Check out this excellent [resource](https://psyteachr.github.io/msc-data-skills/)
-     
-* Introduce the concept of research compendium [[paper](https://peerj.com/preprints/3192v1/)] [[`rrtools` package](https://github.com/benmarwick/rrtools)]
-
-* Improve the GitHub course with [this](https://inbo.github.io/git-course/course_rstudio.html), [this](https://ohshitgit.com/) and [that](https://privefl.github.io/R-presentation/rstudio-git.html#1)
+If you see mistakes or want to suggest changes, please [create an issue](https://github.com/oliviergimenez/reproducible-science-workshop/issues) on the source repository.
 
 ## Reuse {.appendix}
 
-Text and figures are licensed under Creative Commons Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Any computer code (R, HTML, CSS, etc.) in slides and worksheets, including in slide and worksheet sources, is also licensed under [MIT](https://github.com/wilkelab/SDS375/LICENSE.md). 
+Text and figures are licensed under Creative Commons Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Any computer code (R, HTML, CSS, etc.) in slides and worksheets, including in slide and worksheet sources, is also licensed under [MIT](https://github.com/oliviergimenez/reproducible-science-workshop/blob/master/LICENSE.md). 

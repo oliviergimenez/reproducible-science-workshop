@@ -1,37 +1,40 @@
 name: "reproducible-science-workshop"
 title: "Reproducible science workshop"
-description: |
+description: "A one-day workshop with R and RStudio"
 output_dir: "docs"
-#theme: "theme.css"
+theme: "theme.css"
 #repository_url: https://github.com/wilkelab/SDS375
 include: [".nojekyll"]
 navbar:
+#  logo:
+#    image: images/cefe.png
+#    href: https://www.cefe.cnrs.fr/en/
   source_url: true
   left:
+  right:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
-  right:
     - text: "Slides"
       menu:
-        - text: "Lecture 1: Motivation"
-          href: slides/0_motivation.html
-        - text: "Lecture 2: Versioning"
-          href: slides/1_github.html
-        - text: "Lecture 3: Dynamic doc"
-          href: slides/2_markdown.html
-        - text: "Lecture 4: Manip"
+        - text: "Introduction"
+          href: slides/0_introduction.html
+        - text: "Part 1: Manipulating data"
           href: slides/3_dplyr.html
-        - text: "Lecture 5: Dataviz"
+        - text: "Part 2: Visualising data"
           href: slides/4_ggplot.html
-        - text: "Lecture 6: Spatial"
-          href: slides/5_spatial.html
+        - text: "Part 3: Writing reproducible document"
+          href: slides/2_markdown.html
+        - text: "Part 4: Versioning"
+          href: slides/1_github.html
+        - text: "Conclusion"
+          href: slides/5_conclusion.html
     - text: "Worksheets"
       menu:
         - text: "Practical 1: Dynamic doc"
           href: practicals/1_rmarkdown.html
         - text: "Practical 1: Solution"
           href: practicals/1_rmarkdownsolution.html
+    - icon: fab fa-github
+      href: https://github.com/oliviergimenez/reproducible-science-workshop
 output: distill::distill_article
 
