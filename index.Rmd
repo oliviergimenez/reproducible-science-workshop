@@ -24,12 +24,12 @@ Where: Zoom
 
 # Timeline
 
-* Motivations
-* Manipulating data in the `tidyverse` 
-* Visualising data in the `tidyverse` 
-* Writing dynamic and reproducible documents with `R Markdown` 
-* Versioning with `Git` and `GitHub` in `RStudio` 
-* Take-home messages
+* Motivations    
+* Manipulating data in the `tidyverse`   
+* Visualising data in the `tidyverse`   
+* Writing dynamic and reproducible documents with `R Markdown`  
+* Versioning with `Git` and `GitHub` in `RStudio`   
+* Take-home messages    
 
 # Requirements
 
@@ -39,10 +39,10 @@ Where: Zoom
 
     - The latest version of `R`, [download here](https://cloud.r-project.org/).
     - The latest version of `RStudio`, [download here](https://rstudio.com/products/rstudio/download/#download).
-    - The following `R` packages: `tidyverse`, `sf`, `emo`, `janitor`, `palmerpenguins` and `lubridate.` You can install them all at once by running the following code in the `R` command line:
+    - The following `R` packages: `tidyverse`, `sf`, `emo`, `janitor`, `palmerpenguins`, `usethis` and `lubridate.` You can install them all at once by running the following code in the `R` command line:
 
 ```{r eval = FALSE, echo = TRUE}
-install.packages(c("tidyverse", "sf", "emo", "janitor", "palmerpenguins", "lubridate"))
+install.packages(c("tidyverse", "sf", "emo", "janitor", "palmerpenguins", "usethis", "lubridate"))
 ```
 
 

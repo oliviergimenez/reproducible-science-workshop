@@ -45,13 +45,25 @@ knitr::opts_chunk$set(comment = "")
 
 # Not covered
 
+* You may automate your process
+
+* Put everything together in a research compendium
+
 Drake, targets see [here](https://ropensci.org/blog/2021/02/03/targets/) and [there](https://books.ropensci.org/targets/), docker, rrtools, [groudhogs](http://groundhogr.com/), [packrat and renv](https://kevinushey-2020-rstudio-conf.netlify.app/slides.html#1)
+
+* You don’t need to adopt all these practices at once; little by little, already great to set your mind in that direction
+
+---
+
+## Research compendium
+
+* https://benmarwick.github.io/2019-12-09-brown/
+
+* le papier de Ben Marwick https://peerj.com/preprints/3192.pdf
 
 
 ---
 
 ## Further reading
 
-- [R Markdown tutorial](https://rmarkdown.rstudio.com/lesson-2.html)
-- [R Markdown cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
-- [R Markdown book](https://bookdown.org/yihui/rmarkdown/)
+

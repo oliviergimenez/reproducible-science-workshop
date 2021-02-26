@@ -58,7 +58,7 @@ A **website** (https://github.com/) that allows you to **store your Git reposito
 
 ***
 
-## Now: RStudio + `usethis` `r emo::ji("package")` == `r emo::ji("heart")` `Git` & `GitHub` `r emo::ji("star_struck")`
+## Now: RStudio == `r emo::ji("heart")` `Git` & `GitHub` `r emo::ji("star_struck")`
 
 .center[
 ![](https://media.giphy.com/media/GA2FNpP1kAQNi/giphy.gif)
@@ -79,7 +79,7 @@ usethis::git_sitrep()
 
 **Set your configuration**
 
-Use your github username and and the email you used to sign-up on GitHub
+Use your github username and the email you used to sign-up on GitHub
 
 ```{r, eval=FALSE}
 usethis::use_git_config(
@@ -225,11 +225,17 @@ usethis::use_github(protocol = "https")
   + [https://choosealicense.com/](https://choosealicense.com/) help on choosing a licence.
 
     
+---
+
+# Anatomy of a GitHub repo
+
+
 - **`CONTRIBUTING.md`** - guidelines for contributors.
   + `usethis::use_tidy_contributing()` provides a realtively strict but instructive template
 
 - **`CODE_OF_CONDUCT.md`** set the tone for discourse between contributors. 
   + `use_code_of_conduct()`
+
 
 ---
 # GitHub issues
@@ -251,24 +257,4 @@ usethis::use_github(protocol = "https")
 * Increase interactions with users
 
 * Easy distribution of packages (without CRAN submissions)
-
-
----
-# Resources
-
-<br>
-
-#### I used many slides from [Anna Krystalli](https://annakrystalli.me/)
-
-<br>
-
-#### Also, see our [FRB-Cesab and GDR EcoStat Workshop on reproducible research in ecology](https://frbcesab.github.io/datatoolbox/index.html#1)
-
-<br>
-
-#### Check out [Happy Git and GitHub for the useR](https://happygitwithr.com/) for more
-
-<br>
-
-#### The British Ecological Society has [A Guide to Reproducible Code in Ecology and Evolution](https://colauttilab.github.io/Readings/BES-Reproducible-Code.pdf)
 

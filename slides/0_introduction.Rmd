@@ -19,87 +19,137 @@ options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(comment = "")
 ```
 
----
 class: inverse, center, middle
-# Motivation
+# The problems
 
 ---
-<iframe width="1300" height="600" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1200" height="500" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Credit: [Ignasi Bartomeus, PhD](https://bartomeuslab.com/)
 
 ---
-# 
 
-.center[![](assets/img/phd031214s.png)]
+<center>
+
+<img src="assets/img/phd031214s.png" width="400px" />
+
+</center>
+
 
 ---
-# How can you reproduce results?
+class: inverse, center, middle
+# Why reproducible science?
+
+
+---
+
+
+<center>
+
+<img src="assets/natureCapture.png" width="800px" />
+
+</center>
+
+
+---
+
+
+<center>
+
+<img src="assets/leMonde_science.png" width="1100px" />
+
+</center>
+
+
+---
+class: inverse, center, middle
+# What?
+
+---
+
+
+<center>
+
+<img src="assets/definitions.jpg" width="900px" />
+
+</center>
+
+
+---
+class: inverse, center, middle
+# Benefits?
+
+---
+
+# Among other advantages
+
+* Forces you to double-check your stuff (you share data and code)
+
+* Your future-self will thank you (repeat analyses)
+
+* By being reproducible, you build up your credibility (good for CV)
+
+* Faster scientific progress 
+
+---
+
+
+<center>
+
+<img src="img/time-saving.png" width="850px" />
+
+</center>
+
+---
+class: inverse, center, middle
+# How?
+
+---
+## How can you reproduce results?
 
 .center[![](assets/img/ctrlcctrlv.png)]
 
 
 ---
-# What do we need to make research reproducible?
+## What do we need to make research reproducible?
 
-- Something to integrate text, figures and code 
-     * `R`, `Python`, etc
+- Data in some coherent format 
 
+- Non-proprietary programming language (R, Python)
 
-- Something that can be continuously edited and updated 
-     * Living or dynamic document
+- Text, figures and code in same environment
 
+- An environment that allows continuous and transparent editions and updates
 
-- Something that can be easily used in versioning tools
-     * Git
-
-
----
-
-# Is your workflow...
-
-<center>
-
-<img src="assets/definitions.jpg" width="700px" />
-
-</center>
-
+- An explicit workflow
 
 
 ---
+## This workshop
 
-# Why reproducible science?
+* Manipulating data in the `tidyverse`   
 
-<center>
+* Visualising data in the `tidyverse`   
 
-<img src="assets/natureCapture.png" width="700px" />
+* Writing dynamic and reproducible documents with `R Markdown`  
 
-</center>
+* Versioning with `Git` and `GitHub` in `RStudio`   
 
-
----
-
-# Why reproducible science?
-
-<center>
-
-<img src="assets/leMonde_science.png" width="700px" />
-
-</center>
-
----
-
-# Research compendium
-
-* https://benmarwick.github.io/2019-12-09-brown/
-
-* le papier de Ben Marwick https://peerj.com/preprints/3192.pdf
+* Take-home messages    
 
 
 ---
 
 ## Further reading
 
-- [R Markdown tutorial](https://rmarkdown.rstudio.com/lesson-2.html)
-- [R Markdown cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
-- [R Markdown book](https://bookdown.org/yihui/rmarkdown/)
+*  Alston & Rick (2021). A Beginner's Guide to Conducting Reproducible Research. Bull Ecol Soc Am 00( 00):e01801. https://doi.org/10.1002/bes2.1801 
+
+* Baker (2016). 1,500 scientists lift the lid on reproducibility. Nature. 533:452-4. https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970
+
+* Lowndes et al. (2017). Our path to better science in less time using open data science tools. Nat Ecol Evol 1, 0160. https://doi.org/10.1038/s41559-017-0160
+
+* Wilson et al. (2017) Good enough practices in scientific computing. PLoS Comput Biol 13(6): e1005510. https://doi.org/10.1371/journal.pcbi.1005510
+
+* BES Guides to Better Science: Reproducible Code. https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf
+
+
