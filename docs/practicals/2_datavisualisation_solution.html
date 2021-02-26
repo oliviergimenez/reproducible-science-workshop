@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data visualisation - solutions</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Olivier Gimenez" />
+    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="slides-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, title-slide
+
+# Data visualisation - solutions
+### Olivier Gimenez
+### last updated: 2021-02-26
+
+---
+
+
+
+
+## Question 1a: histogram of body mass
+
+.small-font[
+
+```r
+penguins %&gt;%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram()
+```
+]
+
+.center[
+![](2_datavisualisation_solution_files/figure-html/question1a-1.svg)&lt;!-- --&gt;
+]
+
+
+---
+
+## Question 1b: a color per species
+
+.small-font[
+
+```r
+penguins %&gt;%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species))
+```
+]
+
+.center[
+![](2_datavisualisation_solution_files/figure-html/question1b-1.svg)&lt;!-- --&gt;
+]
+
+
+---
+
+
+## Question 1c: darkorange, purple and cyan4
+
+.small-font[
+
+```r
+penguins %&gt;%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species)) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) 
+```
+]
+
+
+.center[
+![](2_datavisualisation_solution_files/figure-html/question1c-1.svg)&lt;!-- --&gt;
+]
+
+
+---
+
+
+## Question 1d: adjust transparency
+
+.small-font[
+
+```r
+penguins %&gt;%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) 
+```
+]
+
+.center[
+![](2_datavisualisation_solution_files/figure-html/question1d-1.svg)&lt;!-- --&gt;
+]
+
+
+---
+
+
+## Question 1e: add titles
+
+.pull-left.tiny-font[
+
+```r
+penguins %&gt;%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), 
+                 alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body mass",
+       fill = "Penguin species")
+```
+]
+
+
+.pull-right[
+![](2_datavisualisation_solution_files/figure-html/question1e-1.svg)&lt;!-- --&gt;
+]
+
+
+
+---
+
+
+## Question 1f: change theme
+
+.pull-left.tiny-font[
+
+```r
+penguins %&gt;%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), 
+                 alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body mass",
+       fill = "Penguin species") +
+  theme_minimal()
+```
+]
+
+
+.pull-right[
+![](2_datavisualisation_solution_files/figure-html/question1f-1.svg)&lt;!-- --&gt;
+]
+
+---
+
+
+## Question 1g: split by sex
+
+.pull-left.tiny-font[
+
+```r
+penguins %&gt;%
+# filter out penguins w/ missing sex
+  filter(!is.na(sex)) %&gt;% 
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species),
+# fill histogram, adjust transparency                 
+                 alpha = 0.5) + 
+# change colour
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) + 
+  labs(x = "Body mass (g)", # x lab
+       y = "Frequency", # y lab
+       title = "Penguin body mass", 
+       fill = "Penguin species") + 
+  theme_minimal() + # change theme
+# hist by sex, w/ diff X scale
+  facet_wrap(~sex, scales = "free_x") 
+```
+]
+
+.pull-right[
+![](2_datavisualisation_solution_files/figure-html/question1g-1.svg)&lt;!-- --&gt;
+]
+
+
+---
+
+
+## Question 2a: scatter plot
+
+.tiny-font[
+
+```r
+penguins %&gt;% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point() +
+  theme_minimal()
+```
+]
+
+
+.center[
+![](2_datavisualisation_solution_files/figure-html/question2a-1.svg)&lt;!-- --&gt;
+]
+
+
+---
+
+
+## Question 2b: species-specific shapes
+
+.pull-left.tiny-font[
+
+```r
+penguins %&gt;% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(shape = species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal()
+```
+]
+
+
+.pull-right[
+![](2_datavisualisation_solution_files/figure-html/question2b-1.svg)&lt;!-- --&gt;
+]
+
+---
+
+
+## Question 2c: species-specific colors
+
+.pull-left.tiny-font[
+
+```r
+penguins %&gt;% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal()
+```
+]
+
+
+.pull-right[
+![](2_datavisualisation_solution_files/figure-html/question2c-1.svg)&lt;!-- --&gt;
+]
+
+
+---
+
+## Question 2d: species-specific shapes and colors
+
+.pull-left.tiny-font[
+
+```r
+penguins %&gt;% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal()
+```
+]
+
+
+.pull-right[
+![](2_datavisualisation_solution_files/figure-html/question2d-1.svg)&lt;!-- --&gt;
+]
+
+
+---
+
+
+## Question 2e: add titles
+
+.tiny-font[
+
+```r
+penguins %&gt;% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species, 
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin body mass wrt flipper length",
+       subtitle = "for Adelie, Chinstrap and Gentoo species",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme_minimal()
+```
+]
+
+
+---
+
+## Question 2e
+
+
+.center[
+![](2_datavisualisation_solution_files/figure-html/question2e-1.svg)&lt;!-- --&gt;
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"slideNumberFormat": ""
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

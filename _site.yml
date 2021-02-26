@@ -30,10 +30,24 @@ navbar:
           href: slides/5_conclusion.html
     - text: "Worksheets"
       menu:
-        - text: "Practical 1: Dynamic doc"
-          href: practicals/1_rmarkdown.html
-        - text: "Practical 1: Solution"
-          href: practicals/1_rmarkdownsolution.html
+        - text: "Practical 1: Manipulating data"
+          href: practicals/1_datamanipulation.html
+        - text: "Practical 1: Manipulating data - Solutions"
+          href: practicals/1_datamanipulation_solution.html
+        - text: "Practical 2: Visualizing data"
+          href: practicals/2_datavisualisation.html
+        - text: "Practical 2: Visualizing data - Solutions"
+          href: practicals/2_datavisualisation_solution.html
+        - text: "Practical 3: Writing reproducible documents"
+          href: practicals/3_rmarkdown.html
+        - text: "Practical 3: Writing reproducible documents - Solutions"
+          href: practicals/3_rmarkdownsolution.Rmd
+        - text: "Practical 3: Writing reproducible documents - Html output"
+          href: practicals/3_rmarkdownsolution.html
+        - text: "Practical 3: Writing reproducible documents - PDF output"
+          href: practicals/3_rmarkdownsolution.pdf
+        - text: "Practical 3: Writing reproducible documents - Word output"
+          href: practicals/3_rmarkdownsolution.docx
     - icon: fab fa-github
       href: https://github.com/oliviergimenez/reproducible-science-workshop
 output: distill::distill_article

@@ -1,0 +1,70 @@
+---
+title: "Data visualisation"
+author: "Olivier Gimenez"
+date: "last updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, "slides-theme.css"]
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      slideNumberFormat: ''
+      titleSlideClass: [center, middle]
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+#options(htmltools.dir.version = FALSE)
+#knitr::opts_chunk$set(comment = "", warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+![](lter_penguins.png)
+
+---
+
+## Motivation
+
+We use data from package `palmerpenguins` to familiarize ourselves with data visualization with the tidyverse. We first load the packages we will need. 
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+---
+
+## Question 1
+
+a. Build a histogram of body mass.   
+
+b. Fill in histogram with a color per species.      
+
+c. Change the color by default to darkorange, purple and cyan4.    
+
+d. Adjust transparency for all three histograms.     
+
+e. Add a title to the axes, the legend and the figure.    
+
+f. Change the theme used by default.    
+
+g. Do a-f for males and females and display on same figure.    
+
+
+
+---
+
+
+## Question 2
+
+a. Build a scatter plot of body mass wither respect to flipper length.      
+
+b. Consider a shape for the points different for each species. Increase point size and adjust transparency. 
+
+c. Consider a color for the points different for each species. Increase point size and adjust transparency.   
+
+d. Combine b-c.    
+
+e. Change colors to darkorange, purple and cyan4. Add titles to axes, legend and figure.     
+
+

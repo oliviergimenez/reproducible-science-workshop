@@ -1,0 +1,331 @@
+---
+title: "Data visualisation - solutions"
+author: "Olivier Gimenez"
+date: "last updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, "slides-theme.css"]
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      slideNumberFormat: ''
+      titleSlideClass: [center, middle]
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+#options(htmltools.dir.version = FALSE)
+#knitr::opts_chunk$set(comment = "", warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Question 1a: histogram of body mass
+
+.small-font[
+```{r question1a, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram()
+```
+]
+
+.center[
+```{r question1a, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+
+---
+
+## Question 1b: a color per species
+
+.small-font[
+```{r question1b, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species))
+```
+]
+
+.center[
+```{r question1b, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+
+---
+
+
+## Question 1c: darkorange, purple and cyan4
+
+.small-font[
+```{r question1c, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species)) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) 
+```
+]
+
+
+.center[
+```{r question1c, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+
+---
+
+
+## Question 1d: adjust transparency
+
+.small-font[
+```{r question1d, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) 
+```
+]
+
+.center[
+```{r question1d, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+
+---
+
+
+## Question 1e: add titles
+
+.pull-left.tiny-font[
+```{r question1e, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), 
+                 alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body mass",
+       fill = "Penguin species")
+```
+]
+
+
+.pull-right[
+```{r question1e, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+
+
+---
+
+
+## Question 1f: change theme
+
+.pull-left.tiny-font[
+```{r question1f, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), 
+                 alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body mass",
+       fill = "Penguin species") +
+  theme_minimal()
+```
+]
+
+
+.pull-right[
+```{r question1f, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+---
+
+
+## Question 1g: split by sex
+
+.pull-left.tiny-font[
+```{r question1g, eval = FALSE}
+penguins %>%
+# filter out penguins w/ missing sex
+  filter(!is.na(sex)) %>% 
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species),
+# fill histogram, adjust transparency                 
+                 alpha = 0.5) + 
+# change colour
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) + 
+  labs(x = "Body mass (g)", # x lab
+       y = "Frequency", # y lab
+       title = "Penguin body mass", 
+       fill = "Penguin species") + 
+  theme_minimal() + # change theme
+# hist by sex, w/ diff X scale
+  facet_wrap(~sex, scales = "free_x") 
+```
+]
+
+.pull-right[
+```{r question1g, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+
+---
+
+
+## Question 2a: scatter plot
+
+.tiny-font[
+```{r question2a, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point() +
+  theme_minimal()
+```
+]
+
+
+.center[
+```{r question2a, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+
+---
+
+
+## Question 2b: species-specific shapes
+
+.pull-left.tiny-font[
+```{r question2b, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(shape = species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal()
+```
+]
+
+
+.pull-right[
+```{r question2b, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+---
+
+
+## Question 2c: species-specific colors
+
+.pull-left.tiny-font[
+```{r question2c, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal()
+```
+]
+
+
+.pull-right[
+```{r question2c, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+
+---
+
+## Question 2d: species-specific shapes and colors
+
+.pull-left.tiny-font[
+```{r question2d, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal()
+```
+]
+
+
+.pull-right[
+```{r question2d, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+]
+
+
+---
+
+
+## Question 2e: add titles
+
+.tiny-font[
+```{r question2e, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species, 
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin body mass wrt flipper length",
+       subtitle = "for Adelie, Chinstrap and Gentoo species",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme_minimal()
+```
+]
+
+
+---
+
+## Question 2e
+
+
+.center[
+```{r question2e, echo = FALSE, fig.width = 5.5, fig.asp = 0.818, dev = "svg"}
+```
+]
+
