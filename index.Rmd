@@ -34,13 +34,15 @@ Where: Zoom
 
 # Requirements
 
+* Download and install [Git](https://git-scm.com/downloads).
+
 * You will need a GitHub account, you can easily set up a free account [here](https://github.com/).
 
-* To run the workshop materials on your machine, you will need:
+* Install [`R`](https://cloud.r-project.org/) and [`RStudio`](https://rstudio.com/products/rstudio/download/#download)
 
-    - The latest version of `R`, [download here](https://cloud.r-project.org/).
-    - The latest version of `RStudio`, [download here](https://rstudio.com/products/rstudio/download/#download).
-    - The following `R` packages: `tidyverse`, `sf`, `emo`, `janitor`, `palmerpenguins`, `usethis` and `lubridate.` You can install them all at once by running the following code in the `R` command line:
+* Have Git, GitHub and RStudio talk to each other following [these guidelines (section 2.2.2 Configuration only)](https://inbo.github.io/git-course/course_rstudio.html#222_configuration).
+
+* Install the following `R` packages: `tidyverse`, `sf`, `emo`, `janitor`, `palmerpenguins`, `usethis` and `lubridate.` You can install them all at once by running the following code in the `R` command line:
 
 ```{r eval = FALSE, echo = TRUE}
 install.packages(c("tidyverse", "sf", "emo", "janitor", "palmerpenguins", "usethis", "lubridate"))

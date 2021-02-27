@@ -16,7 +16,7 @@ output:
 layout: true
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 library(magrittr)
 ```
 
@@ -36,29 +36,39 @@ library(magrittr)
 
 # Version Control
 
-### What is it? `r emo::ji("thinking")`
+<br>
 
-The **management of changes** to documents, computer programs, large web sites, and other collections of information.
+### What is it? 
+
+The **management of changes** to documents, computer programs,  websites, etc...
+
+<br>
 
 ### Git <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" height="25px" >
 
-Open source (free to use) **Version control software.**
+Free to use **version control software.**
 
-### GitHub <img src="https://raw.githubusercontent.com/annakrystalli/rrresearch/master/docs/assets/github_logo.jpg" height="25px">
+If Dropbox and the "Track changes" feature in MS Word had a baby, that would be Git (Alexa Fredston)
 
-A **website** (https://github.com/) that allows you to **store your Git repositories online** and makes it easy to collaborate with others.
+<br>
+
+### GitHub <img src="https://raw.githubusercontent.com/annakrystalli/rrresearch/master/docs/assets/github_logo.jpg" height="30px">
+
+A **website** (https://github.com/) to **store your Git repositories online** and makes it easy to collaborate with others
+
+You do not need GitHub to use Git, just like you do not need RStudio to run R (Alexa Fredston)
 
 ---
 
 # Git, Github & RStudio
 
-#### Before: git only through the terminal `r emo::ji("cry")`
+#### Before: Git only through the terminal `r emo::ji("cry")`
 
 --
 
 ***
 
-## Now: RStudio == `r emo::ji("heart")` `Git` & `GitHub` `r emo::ji("star_struck")`
+## Now RStudio allows using `Git` & `GitHub` `r emo::ji("star_struck")`
 
 .center[
 ![](https://media.giphy.com/media/GA2FNpP1kAQNi/giphy.gif)
@@ -66,25 +76,24 @@ A **website** (https://github.com/) that allows you to **store your Git reposito
 
 
 ---
-# Configure git & GitHub
+# Configure Git & GitHub
 
-### Configure git
+### Configure Git
 
 **Check your configuration**
 
-```{r, eval=FALSE}
+```{r, eval = FALSE}
 usethis::git_sitrep()
 ```
-
 
 **Set your configuration**
 
 Use your github username and the email you used to sign-up on GitHub
 
-```{r, eval=FALSE}
+```{r, eval = FALSE}
 usethis::use_git_config(
-    user.name = "Jane",
-    user.email = "jane@example.org")
+    user.name = "oliviergimenez",
+    user.email = "olivier.gimenez@cefe.cnrs.fr")
 ```
 
 ---
@@ -92,8 +101,8 @@ usethis::use_git_config(
 
 ### Get GITHUB Personal Authorisation Token
 
-```{r, eval=F}
-usethis::browse_github_pat()
+```{r, eval = F}
+usethis::create_github_token()
 ```
 
 
@@ -103,22 +112,11 @@ usethis::browse_github_pat()
 
 ### Store in `.Renviron` file
 
-```{r, eval=F}
+```{r, eval = F}
 usethis::edit_r_environ()
 ```
 
 <img src="assets/GITHUB_PAT.png" height="400px">
-
-
----
-# Initialise git
-
-
-### Initialise **RStudio project** with Git by **just checking a box!**
-
-It's now **a repository**
-
-<img src="assets/project_git.png" height="200px">
 
 
 
@@ -144,6 +142,18 @@ See Jenny Bryan's post on [**project oriented workflows**](https://www.tidyverse
 
 <img src="assets/new_project.png" height=200px>
 ]
+
+
+
+---
+# Initialise git
+
+
+### Initialise **RStudio project** with Git by **just checking a box!**
+
+It's now **a repository**
+
+<img src="assets/project_git.png" height="200px">
 
 
 
@@ -199,10 +209,7 @@ See Jenny Bryan's post on [**project oriented workflows**](https://www.tidyverse
 
 #### Create repo
 
-
-```{r, eval=FALSE}
-usethis::use_github(protocol = "https")
-```
+Via GitHub or using package `usethis` w/ `usethis::use_github(protocol = "https")`
 
 <img src="assets/my_awesome_repo.png" width="750px">
 
@@ -240,7 +247,7 @@ usethis::use_github(protocol = "https")
 ---
 # GitHub issues
 
-### use GitHub issues to plan, record and discuss tasks.
+### Use so-called issues to plan, record and discuss tasks
 
 <img src="assets/github_issues.png" width="800px">
 
@@ -250,11 +257,122 @@ usethis::use_github(protocol = "https")
 
 * A backup of your repository
 
-* Work with others (not covered)
-
 * Increase your visibility 
 
-* Increase interactions with users
-
 * Easy distribution of packages (without CRAN submissions)
+
+* Increase interactions with users (issues, pull requests)
+
+* Work with others (not covered)
+
+
+---
+# Further reading
+
+* The bible: [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+
+* See also: [Hadley Wickham R packages book](https://r-pkgs.org/git.html)
+
+---
+# My two-cent workflow
+
+<br><br>
+
+<center>
+
+<img src="img/mytwocents.gif">
+ 
+</center>
+
+
+
+---
+# Create a new repository on GitHub
+
+<br><br>
+
+<center>
+
+<img src="img/new-repo-in-github.png">
+ 
+</center>
+
+---
+# Name and Public/Private
+
+<center>
+
+<img src="img/create-new-repo.png">
+ 
+</center>
+
+
+---
+# Copy https
+
+<br><br>
+
+<center>
+
+<img src="img/https.png">
+ 
+</center>
+
+
+---
+# In RStudio, File/New Project
+
+<br><br>
+
+<center>
+
+<img src="img/pull-down-new-project.png">
+ 
+</center>
+
+
+---
+# Select Version Control
+
+<br>
+
+<center>
+
+<img src="img/create-project.png">
+ 
+</center>
+
+
+---
+# Select Git
+
+<br><br>
+
+<center>
+
+<img src="img/create-project-vc.png">
+ 
+</center>
+
+
+---
+# Paste https, tick Open in new session
+
+<center>
+
+<img src="img/clone-git-repo.png">
+ 
+</center>
+
+
+---
+# Stage, commit and push
+
+<br><br>
+
+<center>
+
+<img src="img/files-rstudio.png">
+ 
+</center>
 
