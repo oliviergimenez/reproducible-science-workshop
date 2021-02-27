@@ -1,5 +1,5 @@
 ---
-title: "Workshop on reproducible science"
+title: "Workshop on reproducible science: Take-home messages"
 author: "Olivier Gimenez"
 date: "last updated: `r Sys.Date()`"
 output:
@@ -35,15 +35,15 @@ knitr::opts_chunk$set(comment = "")
 
 * Use tidy data format with `tidyverse`
 
-* Prefer .csv or .txt, do not modify original file, use scripts instead
+* Prefer .csv, and do not modify original files
 
-* Write functions instead of repeating yourself
+* Write functions instead of repeating yourself (not covered)
 
 * Version control with `Git` and `GitHub` (easy in `RStudio`)
 
-* Literate programming with `RMarkdown` (makes it easy to comment code)
+* Literate programming with `RMarkdown`
 
-* Organise and share your stuff in research compendia
+* Organise and share your stuff in research compendia (not covered)
 
 ---
 
@@ -103,7 +103,9 @@ knitr::opts_chunk$set(comment = "")
 
 ---
 
-# Further reproducility, automate your process
+# Further reproducility
+
+* Use a [Make file](https://kbroman.org/minimal_make/) to automate the execution of a series of commands
 
 * Build your own package (pointers [here](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio))
 
@@ -119,11 +121,22 @@ knitr::opts_chunk$set(comment = "")
 
 * You do not need to adopt all these practices at once
 
-* Reproducibility is a gradient (think of the different levels of research compendium)
-
-* Little by little is fine 
+* Reproducibility is a gradient, pick the level that works for you
 
 * Already great to set your mind in that direction
 
 
+---
+
+# Acknowledgments
+
+* The workshop website was built with [Distill for R Markdown](https://rstudio.github.io/distill/website.html)
+
+* I used [xaringan::moon_reader](https://slides.yihui.org/xaringan/#1) for the slides
+
+* I re-used some material from [Ulrik Lyngs](https://ulriklyngs.com/), [Garrett Grolemund](https://rstudio.com/speakers/garrett-grolemund/), [Anna Krystalli](https://annakrystalli.me/), [Julien Barnier](https://juba.github.io/tidyverse/) and [Cécile Sauder](https://github.com/cecilesauder/RLadiesTidyverse)
+
+* R-related illustrations are from [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
+
+* Kuddos to my colleagues N. Casajus, F. Guilhaumon, N. Schiettekatte, S. Dray, L. Guéry of the [CESAB / GDR EcoStat workshop on reproducible science](https://frbcesab.github.io/datatoolbox/) from which I learnt so much
 
