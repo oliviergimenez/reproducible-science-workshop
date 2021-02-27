@@ -36,27 +36,31 @@ library(magrittr)
 
 # Version Control
 
-<br>
-
 ### What is it? 
 
 The **management of changes** to documents, computer programs,  websites, etc...
 
-<br>
-
 ### Git <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" height="25px" >
 
-Free to use **version control software.**
+Free to use **version control software**
 
 If Dropbox and the "Track changes" feature in MS Word had a baby, that would be Git (Alexa Fredston)
-
-<br>
 
 ### GitHub <img src="https://raw.githubusercontent.com/annakrystalli/rrresearch/master/docs/assets/github_logo.jpg" height="30px">
 
 A **website** (https://github.com/) to **store your Git repositories online** and makes it easy to collaborate with others
 
 You do not need GitHub to use Git, just like you do not need RStudio to run R (Alexa Fredston)
+
+
+---
+# [Why use version control?](https://stackoverflow.com/questions/1408450/why-should-i-use-version-control/1408464#1408464)
+
+.center[
+![](img/why-vc.png)
+]
+
+
 
 ---
 
@@ -356,7 +360,7 @@ Via GitHub or using package `usethis` w/ `usethis::use_github(protocol = "https"
 
 
 ---
-# Paste https, tick Open in new session
+# Clone your repo (remote to local)
 
 <center>
 
@@ -376,3 +380,13 @@ Via GitHub or using package `usethis` w/ `usethis::use_github(protocol = "https"
  
 </center>
 
+---
+# Alternative is to go local first
+
+<br>
+
+* Step 1: Use RStudio projects (possibility to create a project from an existing directory)
+
+* Step 2: `usethis::use_git()` and follow instructions
+
+* Step 3: `usethis::use_github()` and follow instructions
