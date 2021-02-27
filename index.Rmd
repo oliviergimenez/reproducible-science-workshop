@@ -24,12 +24,13 @@ Where: Zoom
 
 # Timeline
 
-* Motivations    
-* Manipulating data in the `tidyverse`   
-* Visualising data in the `tidyverse`   
-* Writing dynamic and reproducible documents with `R Markdown`  
-* Versioning with `Git` and `GitHub` in `RStudio`   
-* Take-home messages    
+* Motivations (20 minutes)
+* Manipulating data in the `tidyverse` (80 minutes)
+* Visualising data in the `tidyverse` (80 minutes)
+* Lunch break (90 minutes)
+* Writing dynamic and reproducible documents with `R Markdown` (60 minutes)
+* Versioning with `Git` and `GitHub` in `RStudio` (60 minutes)
+* Take-home messages (30 minutes)
 
 # Requirements
 

@@ -14,7 +14,7 @@ class: center, middle, title-slide
 
 # Workshop on reproducible science
 ### Olivier Gimenez
-### last updated: 2021-02-26
+### last updated: 2021-02-27
 
 ---
 
@@ -26,41 +26,107 @@ class: center, middle, title-slide
 
 &lt;center&gt;
 
-&lt;img src="assets/researchcycle.jpg" width="700px" /&gt;
+&lt;img src="assets/researchcycle.jpg" width="650px" /&gt;
 
 &lt;/center&gt;
 
 
 ---
 
-# Take-home message
+# Workflow
 
-* Versioning w gir abd girhub (easy in rstudio)
-* Do not modify original file, use script
-* Csv or txt
-* Rmardown pour vous forcer a commenter (cache = true et r code only)
-* Ranger vos affaires en dossiers (compendium)
-* Fns plutôt que répéter (graphes surtout)
+* Use tidy data format with `tidyverse`
 
----
+* Prefer .csv or .txt, do not modify original file, use scripts instead
 
-# Not covered
+* Write functions instead of repeating yourself
 
-* You may automate your process
+* Version control with `Git` and `GitHub` (easy in `RStudio`)
 
-* Put everything together in a research compendium
+* Literate programming with `RMarkdown` (makes it easy to comment code)
 
-Drake, targets see [here](https://ropensci.org/blog/2021/02/03/targets/) and [there](https://books.ropensci.org/targets/), docker, rrtools, [groudhogs](http://groundhogr.com/), [packrat and renv](https://kevinushey-2020-rstudio-conf.netlify.app/slides.html#1)
-
-* You don’t need to adopt all these practices at once; little by little, already great to set your mind in that direction
+* Organise and share your stuff in research compendia
 
 ---
 
-## Research compendium
+# Research compendium (1/3)
 
-* https://benmarwick.github.io/2019-12-09-brown/
+* a single file of `R` code with in-line comments documenting the  workflow
 
-* le papier de Ben Marwick https://peerj.com/preprints/3192.pdf
+* a `R Markdown` file with text and code in the same source document, and accompanyingdata files
+
+---
+
+# Research compendium (2/3)
+
+* as project grows, more structure is needed
+
+&lt;center&gt;
+
+&lt;img src="img/fig1.png" width="300px" /&gt;
+
+&lt;/center&gt;
+
+---
+
+# Research compendium (2/3)
+
+* as project grows, more structure is needed
+
+&lt;center&gt;
+
+&lt;img src="img/fig2.png" width="300px" /&gt;
+
+&lt;/center&gt;
+
+
+---
+
+# Research compendium (2/3)
+
+* as project grows, more structure is needed
+
+&lt;center&gt;
+
+&lt;img src="img/fig3.png" width="250px" /&gt;
+
+&lt;/center&gt;
+
+
+---
+
+# Research compendium (3/3)
+
+* Marwick, Boettiger &amp; Mullen (2018). [Packaging Data Analytical Work Reproducibly Using R (and Friends)](https://peerj.com/preprints/3192/). The American Statistician 72: 80-88.
+
+* Use package `rrtools`
+
+* Further reading: https://research-compendium.science/ 
+
+---
+
+# Further reproducility, automate your process
+
+* Build your own package (pointers [here](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio))
+
+* Use pipeline toolkits with `targets` (see [here](https://ropensci.org/blog/2021/02/03/targets/) and [there](https://books.ropensci.org/targets/))
+
+* Build an image of your working environment with  [Docker](https://environments.rstudio.com/docker) 
+
+
+
+---
+
+# Closing remarks
+
+* You do not need to adopt all these practices at once
+
+* Reproducibility is a gradient (think of the different levels of research compendium)
+
+* Little by little is fine 
+
+* Already great to set your mind in that direction
+
 
 
     </textarea>
