@@ -1,0 +1,90 @@
+---
+title: "Version control"
+author: "Olivier Gimenez"
+date: "last updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, "slides-theme.css"]
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      slideNumberFormat: ''
+      titleSlideClass: [center, middle]
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+#options(htmltools.dir.version = FALSE)
+#knitr::opts_chunk$set(comment = "", warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+
+## My first commit and push
+
+* Create a repository on GitHub, with a License (say MIT) and a Readme file. 
+
+* Clone it from RStudio (create a new project).
+
+* Update the Readme in RStudio by inserting a sentence of your choice.
+
+* Add in your .gitignore the files you do not need to follow the changes.
+
+* Stage the Readme file, and commit your changes. 
+
+* Push your changes. 
+
+* Go to your repository on GitHub and check out the changes. 
+
+* Is the Readme file modified? 
+
+* Where do you find the commits overview online?
+
+
+---
+
+## Resolve conflicts
+
+* Back in RStudio, modify the sentence in your Readme by inserting a word or two. 
+
+* Commit but do not push yet.
+
+* Now go on GitHub and modify the sentence by deleting a word or two. Commit. 
+
+* Back in RStudio, try to push your local change. You should get some error messages. You've generated a conflict haha. Happens a lot in real life when you work with others, or just by screwing up your workflow. Let's resolve this conflict. 
+
+* From RStudio, pull to download the changes you made on GitHub. Git notices the conflict. The two Readme files with some clear markers to help you compare the two files. Decide which version of the code you'd like to keep, save and commit. Do not forget to push. 
+
+---
+
+## Add a new file
+
+* In your local directory, create a data/ subdirectory.
+
+* In this subdirectory, add a new file, say a csv or an image of yours, in a data/ directory. 
+
+* Link to this file in the Readme, and provide a short description of this file. 
+
+* Commit both changes. Push. 
+
+* Double check that everything was updated on GitHub. 
+
+
+---
+
+## Rollback to a previous state 
+
+* Say we'd like to go back to the first sentence we wrote in the Readme. Identify the id of the corresponding commit in the Review changes RStudio interface. 
+
+* Open a Terminal from RStudio  (gear icon). 
+
+```
+git revert --no-commit idcommit..HEAD
+```
+
+* Commit and push. 
+
+* You should have got rid of all the changes that were made after the commit. The --no-commit is added to prevent having to deal with each commit.
+
+

@@ -48,6 +48,8 @@ navbar:
           href: practicals/3_rmarkdownsolution.pdf
         - text: "Practical 3: Writing reproducible documents - Word output"
           href: practicals/3_rmarkdownsolution.docx
+        - text: "Practical 4: Version control"
+          href: practicals/4_versioncontrol.html
     - icon: fab fa-github
       href: https://github.com/oliviergimenez/reproducible-science-workshop
 output: distill::distill_article
