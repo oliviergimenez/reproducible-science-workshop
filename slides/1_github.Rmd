@@ -277,6 +277,8 @@ Via GitHub or using package `usethis` w/ `usethis::use_github(protocol = "https"
 
 * See also: [Hadley Wickham R packages book](https://r-pkgs.org/git.html)
 
+* And in French: [Travailler avec Git via RStudio et versionner son code](https://thinkr.fr/travailler-avec-git-via-rstudio-et-versionner-son-code/)
+
 ---
 # My two-cent workflow
 
