@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 Who: [Olivier Gimenez](https://oliviergimenez.github.io/)  
-When: March 18, 2021  
+When: 9am on March 18, 2021  
 Where: Zoom  
 <!-- Syllabus: [click here](syllabus.html)   -->
 <!-- Upcoming lectures and assignments: [click here](schedule.html)   -->
