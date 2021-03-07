@@ -6,13 +6,13 @@
       "description": "A one-day workshop with `R` and `RStudio`",
       "author": [],
       "contents": "\nWho: Olivier Gimenez\nWhen: 9am-4pm on March 18, 2021\nWhere: Zoom\nTimeline\nMotivations (20 minutes)\nManipulating data in the tidyverse (80 minutes)\nVisualising data in the tidyverse (80 minutes)\nLunch break (90 minutes)\nWriting dynamic and reproducible documents with R Markdown (60 minutes)\nVersioning with Git and GitHub in RStudio (60 minutes)\nTake-home messages (30 minutes)\nRequirements\nDownload and install Git.\nYou will need a GitHub account, you can easily set up a free account here.\nInstall R and RStudio\nHave Git, GitHub and RStudio talk to each other following these guidelines (section 2.2.2 Configuration only).\nInstall the following R packages: tidyverse, sf, emo, janitor, palmerpenguins, usethis and lubridate. You can install them all at once by running the following code in the R command line:\n\n\ninstall.packages(c(\"tidyverse\", \"sf\", \"emo\", \"janitor\", \"palmerpenguins\", \"usethis\", \"lubridate\"))\n\n\n\nCorrections\nIf you see mistakes or want to suggest changes, please create an issue on the source repository.\nReuse\nText and figures are licensed under Creative Commons Attribution CC BY 4.0. Any computer code (R, HTML, CSS, etc.) in slides and worksheets, including in slide and worksheet sources, is also licensed under MIT.\n\n\n\n",
-      "last_modified": "2021-03-07T10:43:30+01:00"
+      "last_modified": "2021-03-07T10:55:28+01:00"
     },
     {
       "path": "LICENSE.html",
       "author": [],
       "contents": "\nMIT License\nCopyright (c) 2021 Olivier Gimenez\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n\n",
-      "last_modified": "2021-03-07T10:43:30+01:00"
+      "last_modified": "2021-03-07T10:55:28+01:00"
     }
   ],
   "collections": []
