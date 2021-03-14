@@ -292,6 +292,18 @@ in output
 
 
 ---
+# Cache time-consuming code chunks
+
+- When you time-consuming calculations (simulations, Bayes stuff), and/or a looooong document
+
+- Use `cache = TRUE` in all chunks or the chunk that takes long to compile
+
+- Skip execution if executed before and nothing has changed since then
+
+- If you do modifications to the cached chunk(s), previous cache will be automatically invalidated, and new cache is built
+
+
+---
 # Including tables
 
 ```{r}

@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 # Writing dynamic and reproducible documents
 ## An introduction to R Markdown
 ### Olivier Gimenez
-### last updated: 2021-02-27
+### last updated: 2021-03-14
 
 ---
 
@@ -292,6 +292,18 @@ in output
 
 
 - For chunk options, check out &lt;https://yihui.name/knitr/options/&gt;
+
+
+---
+# Cache time-consuming code chunks
+
+- When you time-consuming calculations (simulations, Bayes stuff), and/or a looooong document
+
+- Use `cache = TRUE` in all chunks or the chunk that takes long to compile
+
+- Skip execution if executed before and nothing has changed since then
+
+- If you do modifications to the cached chunk(s), previous cache will be automatically invalidated, and new cache is built
 
 
 ---
