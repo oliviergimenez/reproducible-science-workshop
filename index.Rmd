@@ -24,13 +24,13 @@ Where: Zoom
 
 # Timeline
 
-* Motivations (20 minutes)
-* Manipulating data in the `tidyverse` (80 minutes)
-* Visualising data in the `tidyverse` (80 minutes)
-* Lunch break (90 minutes)
-* Writing dynamic and reproducible documents with `R Markdown` (60 minutes)
-* Versioning with `Git` and `GitHub` in `RStudio` (60 minutes)
-* Take-home messages (30 minutes)
+* Motivations [[lecture](slides/0_introduction.html) | [video](https://youtu.be/xfMbzUb5iKk?t=9)]
+* Manipulating data in the `tidyverse` [[lecture](slides/3_dplyr.html) | [practical](practicals/1_datamanipulation.html) | [solutions](practicals/1_datamanipulation_solution.html) | [video](https://youtu.be/xfMbzUb5iKk?t=752)]
+* Visualising data in the `tidyverse` [[lecture](slides/4_ggplot.html) | [practical](practicals/2_datavisualisation.html) | [solutions](practicals/2_datavisualisation_solution.html) | [video](https://youtu.be/xfMbzUb5iKk?t=7381)]
+* Lunch break
+* Writing dynamic and reproducible documents with `R Markdown` [[lecture](slides/2_markdown.html) | [practical](practicals/3_rmarkdown.html) | [solutions](practicals/3_rmarkdownsolution.Rmd) | [video](https://youtu.be/nnwxpD9TMQw?t=10)]
+* Versioning with `Git` and `GitHub` in `RStudio` [[lecture](slides/1_github.html) | [practical](practicals/4_versioncontrol.html) | [video](https://youtu.be/nnwxpD9TMQw?t=5033)]
+* Take-home messages [[lecture](slides/5_conclusion.html) | [video](https://youtu.be/nnwxpD9TMQw?t=10355)]
 
 # Requirements
 
