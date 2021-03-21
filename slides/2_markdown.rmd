@@ -20,6 +20,19 @@ theme_set(theme_grey(base_size = 16))
 library(emo)
 ```
 
+# Credits
+
+- Garrett Grolemund [RStudio webinar](https://github.com/garrettgman/webinars/tree/master/12-Getting-started-with-R-Markdown)
+
+![](img/garrett.jpg) 
+
+- Ulrik Lyngs [workshop material](https://github.com/ulyngs/rmarkdown-workshop-2019) 
+
+![](img/ulrik2.jpg)
+
+
+
+---
 
 .center[![](assets/img/trio.jpg)]
 

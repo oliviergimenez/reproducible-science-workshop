@@ -21,6 +21,13 @@ library(magrittr)
 ```
 
 ---
+# Credits
+
+* Many slides from [Anna Krystalli](https://annakrystalli.me/about/)
+
+.center[![](img/annakrystalli.jpg)]
+
+---
 
 # Rings a bell? 
 
