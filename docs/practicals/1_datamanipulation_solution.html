@@ -4,7 +4,7 @@
     <title>Data manipulation - solutions</title>
     <meta charset="utf-8" />
     <meta name="author" content="Olivier Gimenez" />
-    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="slides-theme.css" type="text/css" />
   </head>
@@ -14,7 +14,7 @@ class: center, middle, title-slide
 
 # Data manipulation - solutions
 ### Olivier Gimenez
-### last updated: 2021-02-26
+### last updated: 2022-05-16
 
 ---
 
@@ -30,7 +30,7 @@ penguins # display data
 ```
 
 ```
-## # A tibble: 344 x 8
+## # A tibble: 344 × 8
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
 ##  1 Adelie  Torgersen           39.1          18.7               181        3750
@@ -95,7 +95,7 @@ dat # nb of penguins
 ```
 
 ```
-## # A tibble: 333 x 4
+## # A tibble: 333 × 4
 ##    species island    bill_length_mm body_mass_g
 ##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;       &lt;int&gt;
 ##  1 Adelie  Torgersen           39.1        3750
@@ -123,9 +123,9 @@ dat %&gt;% count(species)
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   species       n
-## * &lt;fct&gt;     &lt;int&gt;
+##   &lt;fct&gt;     &lt;int&gt;
 ## 1 Adelie      146
 ## 2 Chinstrap    68
 ## 3 Gentoo      119
@@ -141,7 +141,7 @@ dat %&gt;% count(species, sort = TRUE) # idem, arranged by n
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   species       n
 ##   &lt;fct&gt;     &lt;int&gt;
 ## 1 Adelie      146
@@ -160,9 +160,9 @@ dat %&gt;% count(island) # nb of island, and penguins per island
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   island        n
-## * &lt;fct&gt;     &lt;int&gt;
+##   &lt;fct&gt;     &lt;int&gt;
 ## 1 Biscoe      163
 ## 2 Dream       123
 ## 3 Torgersen    47
@@ -180,7 +180,7 @@ dat %&gt;% count(species, island)
 ```
 
 ```
-## # A tibble: 5 x 3
+## # A tibble: 5 × 3
 ##   species   island        n
 ##   &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;
 ## 1 Adelie    Biscoe       44
@@ -205,7 +205,7 @@ dat %&gt;%
 ```
 
 ```
-## # A tibble: 333 x 5
+## # A tibble: 333 × 5
 ##    species island    bill_length_mm body_mass_g mean_bm
 ##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;       &lt;int&gt;   &lt;dbl&gt;
 ##  1 Adelie  Torgersen           39.1        3750   4207.
@@ -234,7 +234,7 @@ dat %&gt;%
 ```
 
 ```
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   mean_bm
 ##     &lt;dbl&gt;
 ## 1   4207.
@@ -255,7 +255,7 @@ dat %&gt;%
 ```
 
 ```
-## # A tibble: 333 x 5
+## # A tibble: 333 × 5
 ## # Groups:   species [3]
 ##    species island    bill_length_mm body_mass_g mean_bm
 ##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;       &lt;int&gt;   &lt;dbl&gt;
@@ -288,9 +288,9 @@ dat %&gt;%
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   species   mean_bm
-## * &lt;fct&gt;       &lt;dbl&gt;
+##   &lt;fct&gt;       &lt;dbl&gt;
 ## 1 Adelie      3706.
 ## 2 Chinstrap   3733.
 ## 3 Gentoo      5092.
@@ -310,9 +310,9 @@ dat %&gt;%
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##   species   bill_length_mm body_mass_g
-## * &lt;fct&gt;              &lt;dbl&gt;       &lt;dbl&gt;
+##   &lt;fct&gt;              &lt;dbl&gt;       &lt;dbl&gt;
 ## 1 Adelie              38.8       3706.
 ## 2 Chinstrap           48.8       3733.
 ## 3 Gentoo              47.6       5092.
@@ -333,9 +333,9 @@ dat %&gt;%
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##   species   bill_length_mm body_mass_g
-## * &lt;fct&gt;              &lt;dbl&gt;       &lt;dbl&gt;
+##   &lt;fct&gt;              &lt;dbl&gt;       &lt;dbl&gt;
 ## 1 Adelie              38.8       3706.
 ## 2 Chinstrap           48.8       3733.
 ## 3 Gentoo              47.6       5092.

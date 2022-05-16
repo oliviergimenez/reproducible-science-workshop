@@ -23,6 +23,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -454,7 +455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -2357,7 +2358,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2443,27 +2444,56 @@ Worksheets
 
 
 <div class="d-article">
-<p>Who: <a href="https://oliviergimenez.github.io/">Olivier Gimenez</a><br />
+<p>Who: <a href="https://oliviergimenez.github.io/">Olivier
+Gimenez</a><br />
 When: 9am-4pm on March 18, 2021<br />
 Where: Zoom<br />
-<!-- Syllabus: [click here](syllabus.html)   --> <!-- Upcoming lectures and assignments: [click here](schedule.html)   --></p>
+<!-- Syllabus: [click here](syllabus.html)   -->
+<!-- Upcoming lectures and assignments: [click here](schedule.html)   --></p>
 <h1 id="timeline">Timeline</h1>
 <ul>
-<li>Motivations [<a href="slides/0_introduction.html">lecture</a> | <a href="https://youtu.be/xfMbzUb5iKk?t=9">video</a>]</li>
-<li>Manipulating data in the <code>tidyverse</code> [<a href="slides/3_dplyr.html">lecture</a> | <a href="practicals/1_datamanipulation.html">practical</a> | <a href="practicals/1_datamanipulation_solution.html">solutions</a> | <a href="https://youtu.be/xfMbzUb5iKk?t=752">video</a>]</li>
-<li>Visualising data in the <code>tidyverse</code> [<a href="slides/4_ggplot.html">lecture</a> | <a href="practicals/2_datavisualisation.html">practical</a> | <a href="practicals/2_datavisualisation_solution.html">solutions</a> | <a href="https://youtu.be/xfMbzUb5iKk?t=7381">video</a>]</li>
+<li>Motivations [<a href="slides/0_introduction.html">lecture</a> | <a
+href="https://youtu.be/xfMbzUb5iKk?t=9">video</a>]</li>
+<li>Manipulating data in the <code>tidyverse</code> [<a
+href="slides/3_dplyr.html">lecture</a> | <a
+href="practicals/1_datamanipulation.html">practical</a> | <a
+href="practicals/1_datamanipulation_solution.html">solutions</a> | <a
+href="https://youtu.be/xfMbzUb5iKk?t=752">video</a>]</li>
+<li>Visualising data in the <code>tidyverse</code> [<a
+href="slides/4_ggplot.html">lecture</a> | <a
+href="practicals/2_datavisualisation.html">practical</a> | <a
+href="practicals/2_datavisualisation_solution.html">solutions</a> | <a
+href="https://youtu.be/xfMbzUb5iKk?t=7381">video</a>]</li>
 <li>Lunch break</li>
-<li>Writing dynamic and reproducible documents with <code>R Markdown</code> [<a href="slides/2_markdown.html">lecture</a> | <a href="practicals/3_rmarkdown.html">practical</a> | <a href="practicals/3_rmarkdownsolution.Rmd">solutions</a> | <a href="https://youtu.be/nnwxpD9TMQw?t=10">video</a>]</li>
-<li>Versioning with <code>Git</code> and <code>GitHub</code> in <code>RStudio</code> [<a href="slides/1_github.html">lecture</a> | <a href="practicals/4_versioncontrol.html">practical</a> | <a href="https://youtu.be/nnwxpD9TMQw?t=5033">video</a>]</li>
-<li>Take-home messages [<a href="slides/5_conclusion.html">lecture</a> | <a href="https://youtu.be/nnwxpD9TMQw?t=10355">video</a>]</li>
+<li>Writing dynamic and reproducible documents with
+<code>R Markdown</code> [<a href="slides/2_markdown.html">lecture</a> |
+<a href="practicals/3_rmarkdown.html">practical</a> | <a
+href="practicals/3_rmarkdownsolution.Rmd">solutions</a> | <a
+href="https://youtu.be/nnwxpD9TMQw?t=10">video</a>]</li>
+<li>Versioning with <code>Git</code> and <code>GitHub</code> in
+<code>RStudio</code> [<a href="slides/1_github.html">lecture</a> | <a
+href="practicals/4_versioncontrol.html">practical</a> | <a
+href="https://youtu.be/nnwxpD9TMQw?t=5033">video</a>]</li>
+<li>Take-home messages [<a href="slides/5_conclusion.html">lecture</a> |
+<a href="https://youtu.be/nnwxpD9TMQw?t=10355">video</a>]</li>
 </ul>
 <h1 id="requirements">Requirements</h1>
 <ul>
-<li><p>Download and install <a href="https://git-scm.com/downloads">Git</a>.</p></li>
-<li><p>You will need a GitHub account, you can easily set up a free account <a href="https://github.com/">here</a>.</p></li>
-<li><p>Install <a href="https://cloud.r-project.org/"><code>R</code></a> and <a href="https://rstudio.com/products/rstudio/download/#download"><code>RStudio</code></a></p></li>
-<li><p>Have Git, GitHub and RStudio talk to each other following <a href="https://inbo.github.io/git-course/course_rstudio.html#222_configuration">these guidelines (section 2.2.2 Configuration only)</a>.</p></li>
-<li><p>Install the following <code>R</code> packages: <code>tidyverse</code>, <code>sf</code>, <code>emo</code>, <code>janitor</code>, <code>palmerpenguins</code>, <code>usethis</code> and <code>lubridate.</code> You can install them all at once by running the following code in the <code>R</code> command line:</p></li>
+<li><p>Download and install <a
+href="https://git-scm.com/downloads">Git</a>.</p></li>
+<li><p>You will need a GitHub account, you can easily set up a free
+account <a href="https://github.com/">here</a>.</p></li>
+<li><p>Install <a href="https://cloud.r-project.org/"><code>R</code></a>
+and <a
+href="https://rstudio.com/products/rstudio/download/#download"><code>RStudio</code></a></p></li>
+<li><p>Have Git, GitHub and RStudio talk to each other following <a
+href="https://inbo.github.io/git-course/course_rstudio.html#222_configuration">these
+guidelines (section 2.2.2 Configuration only)</a>.</p></li>
+<li><p>Install the following <code>R</code> packages:
+<code>tidyverse</code>, <code>sf</code>, <code>emo</code>,
+<code>janitor</code>, <code>palmerpenguins</code>, <code>usethis</code>
+and <code>lubridate.</code> You can install them all at once by running
+the following code in the <code>R</code> command line:</p></li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2472,10 +2502,17 @@ Where: Zoom<br />
 </div>
 </div>
 <h2 class="appendix" id="corrections">Corrections</h2>
-<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/oliviergimenez/reproducible-science-workshop/issues">create an issue</a> on the source repository.</p>
+<p>If you see mistakes or want to suggest changes, please <a
+href="https://github.com/oliviergimenez/reproducible-science-workshop/issues">create
+an issue</a> on the source repository.</p>
 <h2 class="appendix" id="reuse">Reuse</h2>
-<p>Text and figures are licensed under Creative Commons Attribution <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Any computer code (R, HTML, CSS, etc.) in slides and worksheets, including in slide and worksheet sources, is also licensed under <a href="https://github.com/oliviergimenez/reproducible-science-workshop/blob/master/LICENSE.md">MIT</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Text and figures are licensed under Creative Commons Attribution <a
+href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Any
+computer code (R, HTML, CSS, etc.) in slides and worksheets, including
+in slide and worksheet sources, is also licensed under <a
+href="https://github.com/oliviergimenez/reproducible-science-workshop/blob/master/LICENSE.md">MIT</a>.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
