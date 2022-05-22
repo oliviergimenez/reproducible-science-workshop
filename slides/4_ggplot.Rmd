@@ -65,6 +65,23 @@ knitr::include_graphics("assets/img/ggplot2_logo.jpg")
 knitr::include_graphics("assets/img/ggplot2_logo.jpg")
 ```
 
+---
+
+# Data
+
+See Introduction to data wrangling with `dplyr` at https://bit.ly/3wF5S7f
+
+```{r}
+citations <- read_csv('https://raw.githubusercontent.com/oliviergimenez/intro_tidyverse/master/journal.pone.0166570.s001.CSV') %>%
+  rename(journal = 'Journal identity',
+         impactfactor = '5-year journal impact factor',
+         pubyear = 'Year published',
+         colldate = 'Collection date',
+         pubdate = 'Publication date',
+         nbtweets = 'Number of tweets',
+         woscitations = 'Number of Web of Science citations') %>%
+  mutate(journal = as.factor(journal))
+```
 
 ---
 
