@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 # Introduction to the Tidyverse
 ## Data visualisation
 ### Olivier Gimenez
-### last updated: 2022-05-16
+### last updated: 2022-05-22
 
 ---
 
@@ -49,6 +49,35 @@ class: center, middle, inverse, title-slide
 
 &lt;img src="assets/img/ggplot2_logo.jpg" width="30%" style="display: block; margin: auto;" /&gt;
 
+---
+
+# Data
+
+See Introduction to data wrangling with `dplyr` at https://bit.ly/3wF5S7f
+
+
+```r
+citations &lt;- read_csv('https://raw.githubusercontent.com/oliviergimenez/intro_tidyverse/master/journal.pone.0166570.s001.CSV') %&gt;%
+  rename(journal = 'Journal identity',
+         impactfactor = '5-year journal impact factor',
+         pubyear = 'Year published',
+         colldate = 'Collection date',
+         pubdate = 'Publication date',
+         nbtweets = 'Number of tweets',
+         woscitations = 'Number of Web of Science citations') %&gt;%
+  mutate(journal = as.factor(journal))
+```
+
+```
+## Rows: 1599 Columns: 12
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr (5): Journal identity, Issue, Authors, Collection date, Publication date
+## dbl (7): 5-year journal impact factor, Year published, Volume, Number of twe...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
 
 ---
 
@@ -105,7 +134,7 @@ citations %&gt;%
   geom_point()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-6-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-7-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -120,7 +149,7 @@ citations %&gt;%
 * geom_point(color = "red")
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-7-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-8-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -134,7 +163,7 @@ citations %&gt;%
   geom_point()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-8-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-9-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
 
 * Placing color inside aesthetic maps it to the data
 
@@ -183,7 +212,7 @@ citations_ecology %&gt;%
   geom_point(size=2)
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-10-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-11-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -198,7 +227,7 @@ citations_ecology %&gt;%
   scale_x_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-11-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-12-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -214,7 +243,7 @@ citations_ecology %&gt;%
   scale_x_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-12-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-13-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -230,7 +259,7 @@ citations_ecology %&gt;%
   scale_x_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-13-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-14-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -246,7 +275,7 @@ citations_ecology %&gt;%
   scale_x_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-14-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-15-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -262,7 +291,7 @@ citations_ecology %&gt;%
   scale_x_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-15-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-16-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -286,7 +315,7 @@ citations_ecology %&gt;%
 * geom_histogram()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-17-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-18-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -300,7 +329,7 @@ citations_ecology %&gt;%
 * geom_histogram(fill = "orange")
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-18-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-19-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -314,7 +343,7 @@ citations_ecology %&gt;%
 * geom_histogram(fill = "orange", color = "brown")
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-19-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-20-1.png" width="400cm" height="400cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -331,7 +360,7 @@ citations_ecology %&gt;%
 *      title = "Histogram of the number of tweets")
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-20-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-21-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -349,7 +378,7 @@ citations_ecology %&gt;%
 * facet_wrap(vars(journal))
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-21-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-22-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -364,7 +393,7 @@ citations_ecology %&gt;%
   scale_y_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-22-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-23-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -379,7 +408,7 @@ citations_ecology %&gt;%
   scale_y_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-23-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-24-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -394,7 +423,7 @@ citations_ecology %&gt;%
   scale_y_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-24-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-25-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -412,7 +441,7 @@ citations_ecology %&gt;%
 * labs(x = "")
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-25-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-26-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -432,7 +461,7 @@ citations_ecology %&gt;%
   labs(x = "")
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-26-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-27-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -453,7 +482,7 @@ citations_ecology %&gt;%
   labs(x = "")
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-27-1.png" width="270cm" height="270cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-28-1.png" width="270cm" height="270cm" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -469,7 +498,7 @@ citations %&gt;%
 * geom_col()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-28-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-29-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -484,7 +513,7 @@ citations %&gt;%
   geom_col()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-29-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-30-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -500,7 +529,7 @@ citations %&gt;%
   geom_col()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-30-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-31-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -517,7 +546,7 @@ citations %&gt;%
   labs(x = "counts", y = "")
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-31-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-32-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -541,7 +570,7 @@ citations_ecology %&gt;%
   scale_x_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-32-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-33-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -556,7 +585,7 @@ citations_ecology %&gt;%
   scale_x_log10()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-33-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-34-1.png" width="350cm" height="350cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -573,7 +602,7 @@ citations_ecology %&gt;%
 * theme_bw()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-34-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-35-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -590,7 +619,7 @@ citations_ecology %&gt;%
 * theme_classic()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-35-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-36-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -607,7 +636,7 @@ citations_ecology %&gt;%
 * theme_dark()
 ```
 
-&lt;img src="assets/chunks/unnamed-chunk-36-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
+&lt;img src="assets/chunks/unnamed-chunk-37-1.png" width="300cm" height="300cm" style="display: block; margin: auto;" /&gt;
 
 
 ---
